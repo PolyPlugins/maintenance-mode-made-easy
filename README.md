@@ -4,7 +4,7 @@
 
 Easily manage your site’s maintenance mode with **Maintenance Mode Made Easy**, a lightweight and user-friendly WordPress plugin. Designed to give you full control while keeping things simple, this plugin ensures your site’s downtime is professional and hassle-free.
 
-### Features
+## Features
 
 - Enable or disable maintenance mode effortlessly from the WordPress admin bar, no complicated settings required.
 - Automatically sends a **503 HTTP status header** to inform search engines your site is temporarily unavailable, preserving your SEO rankings.
@@ -17,7 +17,7 @@ Easily manage your site’s maintenance mode with **Maintenance Mode Made Easy**
 - Build your own **custom maintenance page** by creating a new `maintenance.php` in your active theme folder and selecting the "Custom" template in the settings.
 - If a **Privacy Policy** is defined in `/wp-admin/options-privacy.php`, it will allow users to access this page when the site is in maintenance mode.
 
-### Roadmap
+## Roadmap
 
 - Start / End Date & Time
 - Add EDD check
@@ -27,7 +27,7 @@ Easily manage your site’s maintenance mode with **Maintenance Mode Made Easy**
 - Add a builder
 - Redesign of settings page
 
-### GDPR
+## GDPR
 
 > **Disclaimer**: We are not lawyers and always recommend doing your own compliance research into third-party plugins, libraries, etc., as we've seen other maintenance plugins not be in compliance with these regulations.
 
@@ -40,7 +40,7 @@ This plugin collects and stores certain data on your server to ensure proper fun
 - Storing plugin settings
 - Remembering which notices have been dismissed
 
-### Assets
+## Assets
 
 - [Under Construction Keyboard](https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/)
 
