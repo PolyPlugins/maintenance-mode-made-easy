@@ -92,7 +92,7 @@ class Admin {
 
     $settings_submenu_args = array(
       'id'     => 'maintenance_mode_settings',
-      'title'  => 'Settings',
+      'title'  => __('Settings', 'maintenance-mode-made-easy'),
       'href'   => admin_url($settings_page),
       'parent' => 'maintenance_mode',
     );
@@ -106,7 +106,7 @@ class Admin {
 	 * @return void
 	 */
 	public function add_admin_menu() {
-		add_submenu_page('options-general.php', 'Maintenance Mode Made Easy', 'Maintenance Mode', 'manage_options', 'maintenance-mode-made-easy', array($this, 'options_page'));
+		add_submenu_page('options-general.php', __('Maintenance Mode Made Easy', 'maintenance-mode-made-easy'), __('Maintenance Mode', 'maintenance-mode-made-easy'), 'manage_options', 'maintenance-mode-made-easy', array($this, 'options_page'));
 	}
   
 	/**
@@ -162,7 +162,7 @@ class Admin {
     // Add a setting under general section
 		add_settings_field(
 			'enabled', // Setting Id
-			'Enabled?', // Setting Label
+			__('Enabled?', 'maintenance-mode-made-easy'), // Setting Label
 			array($this, 'enabled_render'), // Setting callback
 			'maintenance_mode_general_polyplugins', // Setting page
 			'maintenance_mode_general_section_polyplugins' // Setting section
@@ -170,7 +170,7 @@ class Admin {
 
 		add_settings_field(
 			'temporary_header',
-		  'Send 503 Header?',
+		  __('Send 503 Header?', 'maintenance-mode-made-easy'),
 			array($this, 'temporary_header_render'),
 			'maintenance_mode_general_polyplugins',
 			'maintenance_mode_general_section_polyplugins'
@@ -178,7 +178,7 @@ class Admin {
 
 		add_settings_field(
 			'retry_header',
-		  'Retry After Header',
+		  __('Retry After Header', 'maintenance-mode-made-easy'),
 			array($this, 'retry_header_render'),
 			'maintenance_mode_general_polyplugins',
 			'maintenance_mode_general_section_polyplugins'
@@ -186,7 +186,7 @@ class Admin {
 
 		add_settings_field(
 			'template',
-		  'Template',
+		  __('Template', 'maintenance-mode-made-easy'),
 			array($this, 'template_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -194,7 +194,7 @@ class Admin {
 
 		add_settings_field(
 			'heading',
-		  'Heading',
+		  __('Heading', 'maintenance-mode-made-easy'),
 			array($this, 'heading_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -202,7 +202,7 @@ class Admin {
 
 		add_settings_field(
 			'content',
-		  'Content',
+		  __('Content', 'maintenance-mode-made-easy'),
 			array($this, 'content_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -210,7 +210,7 @@ class Admin {
 
 		add_settings_field(
 			'color',
-		  'Color',
+		  __('Color', 'maintenance-mode-made-easy'),
 			array($this, 'color_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -218,7 +218,7 @@ class Admin {
 
 		add_settings_field(
 			'background_color',
-		  'Background Color',
+		  __('Background Color', 'maintenance-mode-made-easy'),
 			array($this, 'background_color_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -226,7 +226,7 @@ class Admin {
 
 		add_settings_field(
 			'background_color_opacity',
-		  'Background Color Opacity',
+		  __('Background Color Opacity', 'maintenance-mode-made-easy'),
 			array($this, 'background_color_opacity_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -234,7 +234,7 @@ class Admin {
 
 		add_settings_field(
 			'background_image',
-		  'Background Image',
+		  __('Background Image', 'maintenance-mode-made-easy'),
 			array($this, 'background_image_render'),
 			'maintenance_mode_design_polyplugins',
 			'maintenance_mode_design_section_polyplugins'
@@ -242,7 +242,7 @@ class Admin {
 
 		add_settings_field(
 			'analytics',
-		  'Analytics',
+		  __('Analytics', 'maintenance-mode-made-easy'),
 			array($this, 'analytics_render'),
 			'maintenance_mode_analytics_polyplugins',
 			'maintenance_mode_analytics_section_polyplugins'
@@ -250,7 +250,7 @@ class Admin {
 
 		add_settings_field(
 			'ga_tracking_id',
-		  'Google Analytics Tracking ID',
+		  __('Google Analytics Tracking ID', 'maintenance-mode-made-easy'),
 			array($this, 'ga_tracking_id_render'),
 			'maintenance_mode_analytics_polyplugins',
 			'maintenance_mode_analytics_section_polyplugins'
@@ -258,7 +258,7 @@ class Admin {
 
 		add_settings_field(
 			'matomo_url',
-		  'Matomo URL',
+		  __('Matomo URL', 'maintenance-mode-made-easy'),
 			array($this, 'matomo_url_render'),
 			'maintenance_mode_analytics_polyplugins',
 			'maintenance_mode_analytics_section_polyplugins'
@@ -275,7 +275,7 @@ class Admin {
     // Add settings fields for social media
     add_settings_field(
       'facebook',
-      'Facebook URL',
+      __('Facebook URL', 'maintenance-mode-made-easy'),
       array($this, 'facebook_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -283,7 +283,7 @@ class Admin {
 
     add_settings_field(
       'instagram',
-      'Instagram URL',
+      __('Instagram URL', 'maintenance-mode-made-easy'),
       array($this, 'instagram_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -291,7 +291,7 @@ class Admin {
 
     add_settings_field(
       'x',
-      'X URL',
+      __('X URL', 'maintenance-mode-made-easy'),
       array($this, 'x_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -299,7 +299,7 @@ class Admin {
 
     add_settings_field(
       'linkedin',
-      'LinkedIn URL',
+      __('LinkedIn URL', 'maintenance-mode-made-easy'),
       array($this, 'linkedin_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -307,7 +307,7 @@ class Admin {
 
     add_settings_field(
       'youtube',
-      'YouTube URL',
+      __('YouTube URL', 'maintenance-mode-made-easy'),
       array($this, 'youtube_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -315,7 +315,7 @@ class Admin {
 
     add_settings_field(
       'tiktok',
-      'TikTok URL',
+      __('TikTok URL', 'maintenance-mode-made-easy'),
       array($this, 'tiktok_render'),
       'maintenance_mode_social_polyplugins',
       'maintenance_mode_social_section_polyplugins'
@@ -323,7 +323,7 @@ class Admin {
 
     add_settings_field(
       'email',
-      'Email Address',
+      __('Email Address', 'maintenance-mode-made-easy'),
       array($this, 'email_render'),
       'maintenance_mode_contact_polyplugins',
       'maintenance_mode_contact_section_polyplugins'
@@ -331,7 +331,7 @@ class Admin {
 
     add_settings_field(
       'phone',
-      'Phone URL',
+      __('Phone URL', 'maintenance-mode-made-easy'),
       array($this, 'phone_render'),
       'maintenance_mode_contact_polyplugins',
       'maintenance_mode_contact_section_polyplugins'
@@ -339,7 +339,7 @@ class Admin {
 
     add_settings_field(
       'bypass_roles',
-      'Bypass Roles',
+      __('Bypass Roles', 'maintenance-mode-made-easy'),
       array($this, 'bypass_roles_render'),
       'maintenance_mode_general_polyplugins',
       'maintenance_mode_general_section_polyplugins'
@@ -355,7 +355,7 @@ class Admin {
 		$option = Utils::get_option('enabled'); // Get enabled option value
     ?>
     <div class="form-check form-switch">
-      <input type="checkbox" name="maintenance_mode_settings_polyplugins[enabled]" class="form-check-input" id="enabled" role="switch" <?php checked(1, $option, true); ?> /> Yes
+      <input type="checkbox" name="maintenance_mode_settings_polyplugins[enabled]" class="form-check-input" id="enabled" role="switch" <?php checked(1, $option, true); ?> /> <?php _e('Yes', 'maintenance-mode-made-easy'); ?>
     </div>
 		<?php
 	}
@@ -369,9 +369,9 @@ class Admin {
 		$option = Utils::get_option('temporary_header');
     ?>
     <div class="form-check form-switch">
-      <input type="checkbox" name="maintenance_mode_settings_polyplugins[temporary_header]" class="form-check-input" id="temporary_header" role="switch" <?php checked(1, $option, true); ?> /> Yes
+      <input type="checkbox" name="maintenance_mode_settings_polyplugins[temporary_header]" class="form-check-input" id="temporary_header" role="switch" <?php checked(1, $option, true); ?> /> <?php _e('Yes', 'maintenance-mode-made-easy'); ?>
     </div>
-    <p><strong>Provide 503 header to show search engines the site is temporarily down?</strong></p>
+    <p><strong><?php _e('Provide 503 header to show search engines the site is temporarily down?', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -384,8 +384,8 @@ class Admin {
 		$option = Utils::get_option('retry_header');
     ?>
     <input type='number' name='maintenance_mode_settings_polyplugins[retry_header]' step="60" value='<?php echo esc_html($option); ?>'>
-		<p><strong>Provide a Retry After header in seconds.</strong></p>
-		<p><strong>If you believe your site will be in maintenance longer than 3600 seconds (1 hour) then adjust that here.</strong></p>
+		<p><strong><?php _e('Provide a Retry After header in seconds.', 'maintenance-mode-made-easy'); ?></strong></p>
+		<p><strong><?php _e('If you believe your site will be in maintenance longer than 3600 seconds (1 hour) then adjust that here.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -403,7 +403,7 @@ class Admin {
             name="maintenance_mode_settings_polyplugins[bypass_roles][]" 
             multiple="multiple" 
             class="regular-text select2-hidden-accessible" 
-            data-placeholder="<?php esc_attr_e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
+            data-placeholder="<?php _e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
       <?php foreach ($roles as $role_key => $role_name) : 
         if ($role_key == 'administrator') continue;
         ?>
@@ -413,7 +413,7 @@ class Admin {
         </option>
       <?php endforeach; ?>
     </select>
-    <p><strong>Aministrator is always bypassed</strong></p>
+    <p><strong><?php _e('Aministrator is always bypassed', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
   }
 
@@ -433,8 +433,8 @@ class Admin {
       
       <option value="custom"<?php echo $option == 'custom' ? ' selected' : ''; ?>>Custom</option>
     </select>
-    <p><strong>Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in /wp-content/<?php echo esc_html(get_template()); ?>/</strong></p>
-    <p><strong>Using your own custom template will not use any of the below settings.</strong></p>
+    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/<?php echo esc_html(get_template()); ?>/</strong></p>
+    <p><strong><?php _e('Using your own custom template will not use any of the below settings.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -446,7 +446,7 @@ class Admin {
 	public function heading_render() {
 		$option = Utils::get_option('heading');
 	  ?>
-		<input type='text' name='maintenance_mode_settings_polyplugins[heading]' placeholder="Enter the heading for the maintenance page" value='<?php echo esc_html($option); ?>'>
+		<input type='text' name='maintenance_mode_settings_polyplugins[heading]' placeholder="<?php _e('Enter the heading for the maintenance page', 'maintenance-mode-made-easy'); ?>" value='<?php echo esc_html($option); ?>'>
 	  <?php
 	}
 
@@ -515,13 +515,13 @@ class Admin {
     ?>
     <div id="background-image-uploader">
       <!-- Button to open the media uploader -->
-      <button type="button" class="button upload-background-image-button">Select Image</button>
-      <button type="button" class="button remove-background-image-button" style="display: none;">Remove</button>
+      <button type="button" class="button upload-background-image-button"><?php _e('Select Image', 'maintenance-mode-made-easy'); ?></button>
+      <button type="button" class="button remove-background-image-button" style="display: none;"><?php _e('Remove', 'maintenance-mode-made-easy'); ?></button>
       
       <!-- Preview of the selected image -->
       <div class="background-image-preview" style="margin-top: 10px;">
         <?php if (!empty($option)) : ?>
-          <img src="<?php echo esc_url($option); ?>" alt="Background Image Preview" style="max-width: 200px; height: auto;">
+          <img src="<?php echo esc_url($option); ?>" alt="<?php _e('Background Image Preview', 'maintenance-mode-made-easy'); ?>" style="max-width: 200px; height: auto;">
         <?php endif; ?>
       </div>
 
@@ -538,9 +538,9 @@ class Admin {
 	public function analytics_render() {
 		$option    = Utils::get_option('analytics');
     $analytics = array(
-      'disabled' => 'Disabled',
-      'google'   => 'Google Analytics',
-      'matomo'   => 'Matomo',
+      'disabled' => __('Disabled', 'maintenance-mode-made-easy'),
+      'google'   => __('Google Analytics', 'maintenance-mode-made-easy'),
+      'matomo'   => __('Matomo', 'maintenance-mode-made-easy'),
     );
 	  ?>
     <select name="maintenance_mode_settings_polyplugins[analytics]" id="analytics">
@@ -560,7 +560,7 @@ class Admin {
 		$option = Utils::get_option('ga_tracking_id');
 	  ?>
 		<input type='text' name='maintenance_mode_settings_polyplugins[ga_tracking_id]' id="ga_tracking_id" placeholder="G-XXXXXXXXXX" value='<?php echo esc_html($option); ?>'<?php echo !class_exists('COMPLIANZ') ? ' disabled' : ''; ?>>
-    <p><strong>Before enabling, make sure you are in compliance with data protection regulations.</strong></p>
+    <p><strong><?php _e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
 	}
 
@@ -573,7 +573,7 @@ class Admin {
 		$option = Utils::get_option('matomo_url');
 	  ?>
 		<input type='text' name='maintenance_mode_settings_polyplugins[matomo_url]' id="matomo_url" placeholder="https://xxxxxxx.matomo.cloud/" value='<?php echo esc_html($option); ?>'<?php echo !class_exists('COMPLIANZ') ? ' disabled' : ''; ?>>
-    <p><strong>Before enabling, make sure you are in compliance with data protection regulations.</strong></p>
+    <p><strong><?php _e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
 	}
 
@@ -587,9 +587,9 @@ class Admin {
 	  ?>
 	  <?php if (!class_exists('COMPLIANZ')) { ?>
       <div class="gdpr-bypass-container" style="background-color: #D63638; padding: 20px; color: #fff;">
-        <strong>For analytics tracking, we currently check for user consent using <a href="https://wordpress.org/plugins/complianz-gdpr/" style="color: #fff;" target="_blank">Complianz</a>, which is not currently installed.
-        <br><br>If you use another consent plugin, please <a href="https://www.polyplugins.com/contact/" style="color: #fff;" target="_blank">let us know</a> and we'll look into integrating it.</strong>
-        <br><div style="margin-top: 20px; text-align: center;"><input type="checkbox" name="maintenance_mode_settings_polyplugins[gdpr_bypass]" id="gdpr_bypass" <?php checked(1, $option, true); ?> /> Bypass at your own risk</div>
+        <strong><?php _e('For analytics tracking, we currently check for user consent using', 'maintenance-mode-made-easy'); ?> <a href="https://wordpress.org/plugins/complianz-gdpr/" style="color: #fff;" target="_blank"><?php _e('Complianz', 'maintenance-mode-made-easy'); ?></a>, <?php _e('which is not currently installed.', 'maintenance-mode-made-easy'); ?>
+        <br><br><?php _e('If you use another consent plugin, please', 'maintenance-mode-made-easy'); ?> <a href="https://www.polyplugins.com/contact/" style="color: #fff;" target="_blank"><?php _e('let us know', 'maintenance-mode-made-easy'); ?></a> <?php _e("and we'll look into integrating it.", 'maintenance-mode-made-easy'); ?></strong>
+        <br><div style="margin-top: 20px; text-align: center;"><input type="checkbox" name="maintenance_mode_settings_polyplugins[gdpr_bypass]" id="gdpr_bypass" <?php checked(1, $option, true); ?> /> <?php _e('Bypass at your own risk', 'maintenance-mode-made-easy'); ?></div>
       </div>
     <?php
     }
@@ -696,7 +696,7 @@ class Admin {
           <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-              <h1>Maintenance Mode Made Easy Settings</h1>
+              <h1><?php _e('Maintenance Mode Made Easy Settings', 'maintenance-mode-made-easy'); ?></h1>
             </div>
             <div class="col-3"></div>
           </div>
@@ -706,31 +706,31 @@ class Admin {
                 <li>
                   <a href="javascript:void(0);" class="active" data-section="general">
                     <i class="bi bi-gear-fill"></i>
-                    General
+                    <?php _e('General', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="design">
                     <i class="bi bi-palette-fill"></i>
-                    Design
+                    <?php _e('Design', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="analytics">
                     <i class="bi bi-pie-chart-fill"></i>
-                    Analytics
+                    <?php _e('Analytics', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="social">
                     <i class="bi bi-share-fill"></i>
-                    Social
+                    <?php _e('Social', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="contact">
                     <i class="bi bi-person-lines-fill"></i>
-                    Contact
+                    <?php _e('Contact', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
               </ul>
@@ -777,7 +777,7 @@ class Admin {
               <div class="cta">
                 <h2 style="color: #fff;">Something Not Working?</h2>
                 <p>We pride ourselves on quality, so if something isn't working or you have a suggestion, feel free to call or email us. We're based out of Tennessee in the USA.
-                <p><a href="tel:+14234450216" class="button button-primary" style="text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; background-color: #333; border-color: #333;" target="_blank">Call Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.polyplugins.com/contact/" class="button button-primary" style="text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; background-color: #333; border-color: #333;" target="_blank">Email Us</a></p>
+                <p><a href="tel:+14232818591" class="button button-primary" style="text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; background-color: #333; border-color: #333;" target="_blank">Call Us</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.polyplugins.com/contact/" class="button button-primary" style="text-decoration: none; color: #fff; font-weight: 700; text-transform: uppercase; background-color: #333; border-color: #333;" target="_blank">Email Us</a></p>
               </div>
 
               <div class="cta">

@@ -1,0 +1,285 @@
+# Copyright (C) 2025 Poly Plugins
+# This file is distributed under the GPL3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Maintenance Mode Made Easy 1.0.6\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/maintenance-mode-made-easy\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-03-09T09:33:55+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: maintenance-mode-made-easy\n"
+
+#. Plugin Name of the plugin
+#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: includes/classes/Backend/Admin.php:109
+msgid "Maintenance Mode Made Easy"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+msgid "https://www.polyplugins.com/contact/"
+msgstr ""
+
+#. Description of the plugin
+#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+msgid "A lightweight plugin to display a maintenance mode message for visitors."
+msgstr ""
+
+#. Author of the plugin
+#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+msgid "Poly Plugins"
+msgstr ""
+
+#. Author URI of the plugin
+#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+msgid "https://www.polyplugins.com"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:95
+msgid "Settings"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:109
+#: maintenance-mode-made-easy.php:95
+msgid "Maintenance Mode"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:165
+msgid "Enabled?"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:173
+msgid "Send 503 Header?"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:181
+msgid "Retry After Header"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:189
+msgid "Template"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:197
+msgid "Heading"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:205
+msgid "Content"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:213
+msgid "Color"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:221
+msgid "Background Color"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:229
+msgid "Background Color Opacity"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:237
+msgid "Background Image"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:245
+#: includes/classes/Backend/Admin.php:721
+msgid "Analytics"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:253
+msgid "Google Analytics Tracking ID"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:261
+msgid "Matomo URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:278
+msgid "Facebook URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:286
+msgid "Instagram URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:294
+msgid "X URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:302
+msgid "LinkedIn URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:310
+msgid "YouTube URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:318
+msgid "TikTok URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:326
+msgid "Email Address"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:334
+msgid "Phone URL"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:342
+msgid "Bypass Roles"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:358
+#: includes/classes/Backend/Admin.php:372
+msgid "Yes"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:374
+msgid "Provide 503 header to show search engines the site is temporarily down?"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:387
+msgid "Provide a Retry After header in seconds."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:388
+msgid "If you believe your site will be in maintenance longer than 3600 seconds (1 hour) then adjust that here."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:406
+msgid "Select roles that can bypass maintenance mode after logging in"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:416
+msgid "Aministrator is always bypassed"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:436
+msgid "Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:437
+msgid "Using your own custom template will not use any of the below settings."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:449
+msgid "Enter the heading for the maintenance page"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:518
+msgid "Select Image"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:519
+msgid "Remove"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:524
+msgid "Background Image Preview"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:541
+msgid "Disabled"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:542
+msgid "Google Analytics"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:543
+msgid "Matomo"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:563
+#: includes/classes/Backend/Admin.php:576
+msgid "Before enabling, make sure you are in compliance with data protection regulations."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:590
+msgid "For analytics tracking, we currently check for user consent using"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:590
+msgid "Complianz"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:590
+msgid "which is not currently installed."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:591
+msgid "If you use another consent plugin, please"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:591
+msgid "and we'll look into integrating it."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:592
+msgid "Bypass at your own risk"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:699
+msgid "Maintenance Mode Made Easy Settings"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:709
+msgid "General"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:715
+msgid "Design"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:727
+msgid "Social"
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:733
+msgid "Contact"
+msgstr ""
+
+#: includes/classes/Frontend/UI.php:156
+msgid "Service unavailable."
+msgstr ""
+
+#: includes/classes/Frontend/UI.php:173
+msgid "Checkout is temporarily disabled due to maintenance. Please try again later."
+msgstr ""
+
+#: maintenance-mode-made-easy.php:96
+msgid "We are currently performing maintenance, please try again later."
+msgstr ""
+
+#: templates/default/index.php:49
+msgid "Email Us"
+msgstr ""
+
+#: templates/default/index.php:54
+msgid "Call Us"
+msgstr ""
+
+#: templates/default/index.php:93
+msgid "Privacy Policy"
+msgstr ""
+
+#: js/backend/settings.js:49
+msgid "No roles Found"
+msgstr ""
+
+#: js/backend/settings.js:89
+msgid "Select a Background Image"
+msgstr ""
+
+#: js/backend/settings.js:91
+msgid "Use This Image"
+msgstr ""

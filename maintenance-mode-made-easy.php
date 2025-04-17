@@ -3,12 +3,13 @@
 /**
  * Plugin Name: Maintenance Mode Made Easy
  * Description: A lightweight plugin to display a maintenance mode message for visitors.
- * Version: 1.0.5
+ * Version: 1.0.6
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Author: Poly Plugins
  * Author URI: https://www.polyplugins.com
  * Plugin URI: https://www.polyplugins.com/contact/
+ * Text Domain: maintenance-mode-made-easy
  * License: GPL3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
  */
@@ -91,8 +92,8 @@ class Maintenance_Mode_Made_Easy
       'bypass_roles'             => array('administrator'),
       'excluded_urls'            => array(),
       'template'                 => 'default',
-      'heading'                  => 'Maintenance Mode',
-      'content'                  => 'We are currently performing maintenance, please try again later.',
+      'heading'                  => __('Maintenance Mode', 'maintenance-mode-made-easy'),
+      'content'                  => __('We are currently performing maintenance, please try again later.', 'maintenance-mode-made-easy'),
       'color'                    => '#ffffff',
       'background_color'         => '#000000',
       'background_color_opacity' => '80',

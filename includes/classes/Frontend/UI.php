@@ -153,7 +153,7 @@ class UI {
     if (!is_user_logged_in() && !empty($is_maintenance_enabled)) {
       nocache_headers();
 
-      echo '<?xml version="1.0" encoding="UTF-8" ?><status>Service unavailable.</status>';
+      echo '<?xml version="1.0" encoding="UTF-8" ?><status>' . __('Service unavailable.', 'maintenance-mode-made-easy') . '</status>';
       
       exit;
     }
@@ -170,7 +170,8 @@ class UI {
     }
 
     if (Utils::is_maintenance_enabled()) {
-      $errors->add('validation', 'Checkout is temporarily disabled due to maintenance. Please try again later.');
+      $error = __('Checkout is temporarily disabled due to maintenance. Please try again later.', 'maintenance-mode-made-easy');
+      $errors->add('validation', $error);
     }
   }
 

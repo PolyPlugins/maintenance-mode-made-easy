@@ -1,5 +1,7 @@
 jQuery(document).ready(function ($) {
 
+  const { __, _x, _n, _nx } = wp.i18n;
+
   initTabs();
   initSelect2();
   initColorPicker();
@@ -44,7 +46,7 @@ jQuery(document).ready(function ($) {
       dropdownCssClass: 'wp-core-ui',
       language: {
         noResults: function() {
-          return 'No roles Found';
+          return __('No roles Found', 'maintenance-mode-made-easy');
         }
       }
     });
@@ -84,9 +86,9 @@ jQuery(document).ready(function ($) {
 
       // Create the media uploader
       mediaUploader = wp.media({
-        title: 'Select a Background Image',
+        title: __('Select a Background Image', 'maintenance-mode-made-easy'),
         button: {
-          text: 'Use This Image'
+          text: __('Use This Image', 'maintenance-mode-made-easy')
         },
         multiple: false
       });

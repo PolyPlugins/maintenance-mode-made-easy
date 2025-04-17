@@ -72,10 +72,10 @@ class Enqueue {
    * @return void
    */
   private function enqueue_scripts() {
-    wp_enqueue_script('maintenance-mode-settings', plugins_url('/js/backend/settings.js', $this->plugin), array('jquery', 'wp-color-picker'), $this->version, true);
+    wp_enqueue_script('maintenance-mode-settings', plugins_url('/js/backend/settings.js', $this->plugin), array('jquery', 'wp-color-picker', 'wp-i18n'), $this->version, true);
+    wp_set_script_translations('maintenance-mode-settings', 'maintenance-mode-made-easy', plugin_dir_path($this->plugin) . '/languages/');
     wp_enqueue_script('bootstrap', plugins_url('/js/bootstrap.min.js', $this->plugin), array('jquery', 'wp-color-picker'), $this->version, true);
     wp_enqueue_script('select2', plugins_url('/js/backend/select2.min.js', $this->plugin), array('jquery'), $this->version, true);
-  
   }
   
   /**

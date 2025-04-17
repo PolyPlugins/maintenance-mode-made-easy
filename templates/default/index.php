@@ -46,12 +46,12 @@ if (!defined('ABSPATH')) die;
             ?>
             <div class="contact-icons">
               <?php if (!empty($contact['email'])): ?> 
-                <a href="mailto:<?php echo esc_html($contact['email']); ?>" target="_blank" rel="noopener noreferrer" title="Email Us">
+                <a href="mailto:<?php echo esc_html($contact['email']); ?>" target="_blank" rel="noopener noreferrer" title="<?php _e('Email Us', 'maintenance-mode-made-easy'); ?>">
                   <i class="bi bi-envelope-open-fill"></i>
                 </a>
               <?php endif; ?>
               <?php if (!empty($contact['phone'])): ?>
-                <a href="tel:<?php echo esc_attr($contact['phone']); ?>" target="_blank" rel="noopener noreferrer" title="Call Us">
+                <a href="tel:<?php echo esc_attr($contact['phone']); ?>" target="_blank" rel="noopener noreferrer" title="<?php _e('Call Us', 'maintenance-mode-made-easy'); ?>">
                   <i class="bi bi-telephone-fill"></i>
                 </a>
               <?php endif; ?>  
@@ -90,7 +90,7 @@ if (!defined('ABSPATH')) die;
         $privacy_policy_url = get_permalink($privacy_policy_id);
         ?>
         <div class="privacy-text">
-          <a href="<?php echo esc_url($privacy_policy_url); ?>" target="_blank">Privacy Policy</a>
+          <a href="<?php echo esc_url($privacy_policy_url); ?>" target="_blank"><?php _e('Privacy Policy', 'maintenance-mode-made-easy'); ?></a>
         </div>
       <?php endif; ?>
     </div>
