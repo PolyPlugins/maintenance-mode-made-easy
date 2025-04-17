@@ -2,7 +2,7 @@
 Contributors: polyplugins
 Tags: maintenance, maintenace mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -27,10 +27,7 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 
 ## Roadmap
 
-* Add contact email and phone icons
-* Add social media icons
 * Start / End Date & Time
-* WYSIWYG editor
 * Design and build additional templates
 * Redesign of settings page
 
@@ -71,6 +68,12 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 == Changelog ==
+
+= 1.0.2 =
+* Added: WYSIWYG editor for content section
+* Added: Contact section to admin to allow adding email and phone icons to maintenance page
+* Added: Socials section to admin to allow adding social icons to maintenance page
+* Bugfix: Icons not loading in admin
 
 = 1.0.1 =
 * Bugfix: Admins not able to bypass maintenance order restrictions when performing test orders

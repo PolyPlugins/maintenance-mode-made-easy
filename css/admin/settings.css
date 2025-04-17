@@ -47,7 +47,8 @@ input[type="range"] {
 }
 
 .nav-links li a {
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 16px;
   font-weight: 500;
   color: #333;
@@ -57,13 +58,18 @@ input[type="range"] {
   text-decoration: none;
 }
 
+.nav-links li a:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .nav-links li a:hover {
   color: #46BEA4;
 }
 
 .nav-links li a.active {
-  color: #fff;
   background-color: #333;
+  color: #fff;
 }
 
 .nav-links .fa {
@@ -120,6 +126,7 @@ p.submit {
 input[type="checkbox"] {
   border-radius: 5px!important;
 }
+
 select, input {
   border-top-right-radius: 5px!important;
   border-bottom-right-radius: 5px!important;
@@ -138,7 +145,7 @@ select, input {
 }
 
 input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
-  border-color: var(--settings-primary, #46BEA4)!important;
+  border-color: #46BEA4!important;
   box-shadow: none!important;
 }
 
@@ -152,58 +159,101 @@ input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, inp
 }
 
 .credit a {
-  color: var(--settings-primary, #46BEA4);
+  color: #46BEA4;
   text-decoration: none;
 }
 
 input[role=switch]:checked {
-  background-color: var(--settings-primary, #46BEA4)!important;
-  border-color: var(--settings-primary, #46BEA4)!important;
+  background-color: #46BEA4!important;
+  border-color: #46BEA4!important;
 }
 
 a.btn.btn-primary {
-  background-color: var(--settings-primary, #46BEA4)!important;
-  border-color: var(--settings-primary, #46BEA4)!important;
+  background-color: #46BEA4!important;
+  border-color: #46BEA4!important;
 }
 
 a.btn.btn-secondary {
-  background-color: var(--settings-secondary, #6C757D)!important;
-  border-color: var(--settings-secondary, #6C757D)!important;
+  background-color: #6C757D!important;
+  border-color: #6C757D!important;
 }
 
 a.btn.btn-success {
-  background-color: var(--settings-success, #198754)!important;
-  border-color: var(--settings-success, #198754)!important;
+  background-color: #198754!important;
+  border-color: #198754!important;
 }
 
 a.btn.btn-danger {
-  background-color: var(--settings-danger, #DC3545)!important;
-  border-color: var(--settings-danger, #DC3545)!important;
+  background-color: #DC3545!important;
+  border-color: #DC3545!important;
 }
 
 a.btn.btn-warning {
-  background-color: var(--settings-warning, #FFC107)!important;
-  border-color: var(--settings-warning, #FFC107)!important;
-  color: var(--settings-warning, #333)!important;
+  background-color: #FFC107!important;
+  border-color: #FFC107!important;
+  color: #333!important;
 }
 
 a.btn.btn-info {
-  background-color: var(--settings-info, #46BEA4)!important;
-  border-color: var(--settings-info, #46BEA4)!important;
-  color: var(--settings-info, #333)!important;
+  background-color: #46BEA4!important;
+  border-color: #46BEA4!important;
+  color: #333!important;
 }
 
 a.btn.btn-light {
-  background-color: var(--settings-light, #F8F9FA)!important;
-  border-color: var(--settings-light, #F8F9FA)!important;
-  color: var(--settings-light, #333)!important;
+  background-color: #F8F9FA!important;
+  border-color: #F8F9FA!important;
+  color: #333!important;
 }
 
 a.btn.btn-dark {
-  background-color: var(--settings-dark, #212529)!important;
-  border-color: var(--settings-dark, #212529)!important;
+  background-color: #212529!important;
+  border-color: #212529!important;
 }
 
 input[type=checkbox]:checked::before {
 }
 /* Bootstrap End */
+
+
+/* SVG Icon Containers */
+.nav-links a div {
+  width: 21px;
+  height: 21px;
+  /* SVG masking for color control */
+  -webkit-mask-image: var(--icon-url);
+  mask-image: var(--icon-url);
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  /* Use currentColor to match parent's color property */
+  background-color: currentColor;
+}
+
+.nav-links .icon {
+  margin-right: 10px;
+}
+
+.wp-editor-tabs {
+  position: relative;
+  top: 9px !important;
+}
+
+.wp-editor-container {
+  border: 1px solid #ddd !important;
+}
+
+.wp-editor-area {
+  border: none !important;
+}
+
+.wp-switch-editor {
+  margin: 0 !important;
+  padding: 2px 15px !important;  /* Reduced top/bottom padding from 3px to 2px */
+  border: 1px solid #ddd !important;
+  line-height: 1.4 !important;   /* Added to control text vertical position */
+  height: 25px !important;       /* Added to ensure consistent height */
+}

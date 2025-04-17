@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Maintenance Mode Made Easy
  * Description: A lightweight plugin to display a maintenance mode message for visitors.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Author: Poly Plugins
@@ -74,6 +74,7 @@ class Maintenance_Mode_Made_Easy
     add_action('admin_bar_menu', array($this, 'add_admin_bar'), 100);
 
     add_action('wp', array($this, 'maybe_show_maintenance_mode'), 0, 1);
+    // Disable feeds
     add_action('do_feed_rdf', array($this, 'maybe_disable_feed'), 0, 1);
     add_action('do_feed_rss', array($this, 'maybe_disable_feed'), 0, 1);
     add_action('do_feed_rss2', array($this, 'maybe_disable_feed'), 0, 1);
@@ -97,7 +98,8 @@ class Maintenance_Mode_Made_Easy
       wp_enqueue_style('bootstrap', plugins_url('/css/admin/bootstrap-wrapper.min.css', __FILE__), array(), filemtime(plugin_dir_path(dirname(__FILE__)) . dirname(plugin_basename(__FILE__))  . '/css/admin/bootstrap-wrapper.min.css'));
 		  wp_enqueue_script('maintenance-mode-settings', plugins_url('/js/admin/settings.js', __FILE__), array('jquery', 'wp-color-picker'), filemtime(plugin_dir_path(dirname(__FILE__)) . dirname(plugin_basename(__FILE__))  . '/js/admin/settings.js'), true);
       wp_enqueue_style('maintenance-mode-settings', plugins_url('/css/admin/settings.css', __FILE__), array(), filemtime(plugin_dir_path(dirname(__FILE__)) . dirname(plugin_basename(__FILE__))  . '/css/admin/settings.css'));
-      wp_enqueue_style('font-awesome', plugins_url('/css/font-awesome.min.css', __FILE__), array(), filemtime(plugin_dir_path(dirname(__FILE__)) . dirname(plugin_basename(__FILE__))  . '/css/font-awesome.min.css'));
+      wp_enqueue_editor();
+      wp_enqueue_media();
     }
 
     if ($this->is_maintenance_enabled()) {
@@ -270,12 +272,14 @@ class Maintenance_Mode_Made_Easy
 	 * @return void
 	 */
 	public function settings_init() {
+    // Register the setting page
     register_setting(
-      'maintenance_mode_polyplugins',
-      'maintenance_mode_settings_polyplugins', 
+      'maintenance_mode_polyplugins', // Option group
+      'maintenance_mode_settings_polyplugins', // Option name
       array($this, 'sanitize')
     );
 
+    // Add a section to assign an ID for admin.js to target switching between tabs
     add_settings_section(
       'maintenance_mode_general_section_polyplugins',
       '',
@@ -291,18 +295,34 @@ class Maintenance_Mode_Made_Easy
     );
 
     add_settings_section(
+      'maintenance_mode_social_section_polyplugins',
+      '',
+      null,
+      'maintenance_mode_social_polyplugins'
+    );
+
+    add_settings_section(
       'maintenance_mode_analytics_section_polyplugins',
       '',
       null,
       'maintenance_mode_analytics_polyplugins'
     );
 
+    add_settings_section(
+      'maintenance_mode_contact_section_polyplugins',
+      '',
+      null,
+      'maintenance_mode_contact_polyplugins'
+    );
+    
+
+    // Add a setting under general section
 		add_settings_field(
-			'enabled',
-			'Enabled?',
-			array($this, 'enabled_render'),
-			'maintenance_mode_general_polyplugins',
-			'maintenance_mode_general_section_polyplugins'
+			'enabled', // Setting Id
+			'Enabled?', // Setting Label
+			array($this, 'enabled_render'), // Setting callback
+			'maintenance_mode_general_polyplugins', // Setting page
+			'maintenance_mode_general_section_polyplugins' // Setting section
 		);
 
 		add_settings_field(
@@ -408,6 +428,71 @@ class Maintenance_Mode_Made_Easy
 			'maintenance_mode_analytics_polyplugins',
 			'maintenance_mode_analytics_section_polyplugins'
 		);
+
+    // Add settings fields for social media
+    add_settings_field(
+      'facebook',
+      'Facebook URL',
+      array($this, 'facebook_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'instagram',
+      'Instagram URL',
+      array($this, 'instagram_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'x',
+      'X URL',
+      array($this, 'x_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'linkedin',
+      'LinkedIn URL',
+      array($this, 'linkedin_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'youtube',
+      'YouTube URL',
+      array($this, 'youtube_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'tiktok',
+      'TikTok URL',
+      array($this, 'tiktok_render'),
+      'maintenance_mode_social_polyplugins',
+      'maintenance_mode_social_section_polyplugins'
+    );
+
+    add_settings_field(
+      'email',
+      'Email Address',
+      array($this, 'email_render'),
+      'maintenance_mode_contact_polyplugins',
+      'maintenance_mode_contact_section_polyplugins'
+    );
+
+    add_settings_field(
+      'phone',
+      'Phone URL',
+      array($this, 'phone_render'),
+      'maintenance_mode_contact_polyplugins',
+      'maintenance_mode_contact_section_polyplugins'
+    );
 	}
 
   /**
@@ -416,7 +501,7 @@ class Maintenance_Mode_Made_Easy
 	 * @return void
 	 */
 	public function enabled_render() {
-		$option = $this->get_option('enabled');
+		$option = $this->get_option('enabled'); // Get enabled option value
     ?>
     <div class="form-check form-switch">
       <input type="checkbox" name="maintenance_mode_settings_polyplugins[enabled]" class="form-check-input" id="enabled" role="switch" <?php checked(1, $option, true); ?> /> Yes
@@ -493,9 +578,15 @@ class Maintenance_Mode_Made_Easy
 	 */
 	public function content_render() {
 		$option = $this->get_option('content');
-	  ?>
-		<input type='text' name='maintenance_mode_settings_polyplugins[content]' placeholder="Enter the content to be displayed below the heading" value='<?php echo esc_html($option); ?>'>
-	  <?php
+    $editor_settings = array(
+      'textarea_name' => 'maintenance_mode_settings_polyplugins[content]',
+      'textarea_rows' => 8,
+      'media_buttons' => true,  // Media Buttons are visible
+      'teeny'         => false, // Show the full editor
+      'tinymce'       => true,  // Enables the visual editor
+      'quicktags'     => true,  // Enables HTML editor
+    );
+    wp_editor($option, 'maintenance_mode_content', $editor_settings);
 	}
 
 	/**
@@ -551,7 +642,7 @@ class Maintenance_Mode_Made_Easy
       <!-- Preview of the selected image -->
       <div class="background-image-preview" style="margin-top: 10px;">
         <?php if (!empty($option)) : ?>
-            <img src="<?php echo esc_url($option); ?>" alt="Background Image Preview" style="max-width: 200px; height: auto;">
+          <img src="<?php echo esc_url($option); ?>" alt="Background Image Preview" style="max-width: 200px; height: auto;">
         <?php endif; ?>
       </div>
 
@@ -645,9 +736,36 @@ class Maintenance_Mode_Made_Easy
           <div class="row">
             <div class="nav-links col-12 col-md-6 col-xl-3">
               <ul>
-                <li><a href="javascript:void(0);" class="active" data-section="general"><i class="fa fa-gear fa-lg"></i> General</a></li>
-                <li><a href="javascript:void(0);" data-section="design"><i class="fa fa-paint-brush fa-lg"></i> Design</a></li>
-                <li><a href="javascript:void(0);" data-section="analytics"><i class="fa fa-pie-chart fa-lg"></i> Analytics</a></li>
+                <li>
+                  <a href="javascript:void(0);" class="active" data-section="general">
+                    <div class="icon" style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/gear.svg'); ?>');"></div>
+                    General
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" data-section="design">
+                    <div class="icon" style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/paint-brush.svg'); ?>')"></div>
+                    Design
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" data-section="analytics">
+                    <div class="icon" style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/pie-chart.svg'); ?>')"></div>
+                    Analytics
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" data-section="social">
+                    <div class="icon" style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/share-nodes.svg'); ?>')"></div>
+                    Social
+                  </a>
+                </li>
+                <li>
+                  <a href="javascript:void(0);" data-section="contact">
+                    <div class="icon" style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/address-book.svg'); ?>')"></div>
+                    Contact
+                  </a>
+                </li>
               </ul>
             </div>
             <div class="tabs col-12 col-md-6 col-xl-6">
@@ -663,9 +781,21 @@ class Maintenance_Mode_Made_Easy
                 ?>
               </div>
 
+              <div class="tab social" style="display: none;">
+                <?php
+                do_settings_sections('maintenance_mode_social_polyplugins');
+                ?>
+              </div>
+
               <div class="tab analytics" style="display: none;">
                 <?php
                 do_settings_sections('maintenance_mode_analytics_polyplugins');
+                ?>
+              </div>
+
+              <div class="tab contact" style="display: none;">
+                <?php
+                do_settings_sections('maintenance_mode_contact_polyplugins');
                 ?>
               </div>
             
@@ -732,7 +862,7 @@ class Maintenance_Mode_Made_Easy
 		}
 
     if (isset($input['content']) && $input['content']) {
-			$sanitary_values['content'] = sanitize_text_field($input['content']);
+			$sanitary_values['content'] = wp_kses_post($input['content']);
 		}
 
     if (isset($input['color']) && $input['color']) {
@@ -750,6 +880,31 @@ class Maintenance_Mode_Made_Easy
     if (isset($input['background_image']) && $input['background_image']) {
 			$sanitary_values['background_image'] = sanitize_url($input['background_image']);
 		}
+
+    // Sanitize social media URLs
+    if (isset($input['socials']['facebook'])) {
+      $sanitary_values['socials']['facebook'] = sanitize_url($input['socials']['facebook']);
+    }
+
+    if (isset($input['socials']['instagram'])) {
+      $sanitary_values['socials']['instagram'] = sanitize_url($input['socials']['instagram']);
+    }
+
+    if (isset($input['socials']['x'])) {
+      $sanitary_values['socials']['x'] = sanitize_url($input['socials']['x']);
+    }
+
+    if (isset($input['socials']['linkedin'])) {
+      $sanitary_values['socials']['linkedin'] = sanitize_url($input['socials']['linkedin']);
+    }
+
+    if (isset($input['socials']['youtube'])) {
+      $sanitary_values['socials']['youtube'] = sanitize_url($input['socials']['youtube']);
+    }
+
+    if (isset($input['socials']['tiktok'])) {
+      $sanitary_values['socials']['tiktok'] = sanitize_url($input['socials']['tiktok']);
+    }
 
     if (isset($input['analytics']) && $input['analytics']) {
 			$sanitary_values['analytics'] = sanitize_text_field($input['analytics']);
@@ -770,6 +925,14 @@ class Maintenance_Mode_Made_Easy
     } else {
       $sanitary_values['gdpr_bypass'] = false;
 		}
+
+    if (isset($input['contact']['email'])) {
+      $sanitary_values['contact']['email'] = sanitize_email($input['contact']['email']);
+    } 
+
+    if (isset($input['contact']['phone'])) {
+      $sanitary_values['contact']['phone'] = sanitize_text_field($input['contact']['phone']);
+    }
 
     return $sanitary_values;
   }
@@ -796,17 +959,8 @@ class Maintenance_Mode_Made_Easy
       }
     }
 
-    $privacy_policy_id   = get_option('wp_page_for_privacy_policy');
-    $privacy_policy_page = get_post($privacy_policy_id);
-    if ($privacy_policy_page && $privacy_policy_page->post_status === 'publish') :
-      $privacy_policy_url = get_permalink($privacy_policy_id);
+    // Privacy Policy link is now handled in the template file
     ?>
-      <div style="position: fixed; bottom: 20px; width: 100%;">
-        <div style="text-align: center;">
-          <a href="<?php echo esc_url($privacy_policy_url); ?>" target="_blank" style="color: #fff; text-decoration: none;">Privacy Policy</a>
-        </div>
-      </div>
-    <?php endif; ?>
     <!-- <div style="position: fixed; bottom: 20px; width: 100%;">
       <div style="text-align: center;">
         <a href="https://wordpress.org/plugins/maintenance-mode-made-easy/" rel="nofollow" target="_blank">Maintenance Mode Made Easy</a> built by <a href="https://www.polyplugins.com" rel="nofollow" target="_blank">Poly Plugins</a>.
@@ -824,6 +978,7 @@ class Maintenance_Mode_Made_Easy
   {
     $is_maintenance_enabled = $this->is_maintenance_enabled();
 
+    // If user is not logged in and maintenance mode is enabled
     if (!is_user_logged_in() && !empty($is_maintenance_enabled)) {
       nocache_headers();
 
@@ -840,6 +995,7 @@ class Maintenance_Mode_Made_Easy
    */
   public static function activation()
   {
+    // Set default options on activation
     $default_options = array(
       'enabled'                  => false,
       'temporary_header'         => true,
@@ -853,12 +1009,20 @@ class Maintenance_Mode_Made_Easy
       'background_color_opacity' => '100',
       'background_image'         => '',
       'analytics'                => 'disabled',
-      'contact'                  => '',
+      'ga_tracking_id'           => '',
+      'matomo_url'               => '',
+      'gdpr_bypass'              => false,
       'socials'                  => array(
         'facebook'  => '',
         'instagram' => '',
         'x'         => '',
+        'linkedin'  => '',
+        'youtube'   => '',
         'tiktok'    => '',
+      ),
+      'contact' => array(
+        'email' => '',
+        'phone' => '',
       ),
     );
 
@@ -883,14 +1047,17 @@ class Maintenance_Mode_Made_Easy
    */
   private function toggle_maintenance_mode()
   {
+    // If user isn't admin don't allow them to toggle maintenance mode
     if (!current_user_can('manage_options')) {
       return;
     }
 
     $is_maintenance_enabled = $this->is_maintenance_enabled();
 
+    // Toggle maintenance mode
     $this->update_option('enabled', !$is_maintenance_enabled);
 
+    // Clear various caches
     $this->clear_cache();
   }
 
@@ -983,7 +1150,7 @@ class Maintenance_Mode_Made_Easy
   }
   
   /**
-   * Get maintenance mode option
+   * Get maintenance mode option from options array
    *
    * @param  string $option The option to retrieve from options
    * @return mixed  $option The retrieved option value
@@ -1078,6 +1245,93 @@ class Maintenance_Mode_Made_Easy
     }
   }
 
+  /**
+   * Render Facebook URL Field
+   */
+  public function facebook_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['facebook']) ? $socials['facebook'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][facebook]' placeholder="https://facebook.com/your-page" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render Instagram URL Field
+   */
+  public function instagram_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['instagram']) ? $socials['instagram'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][instagram]' placeholder="https://instagram.com/your-profile" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render X URL Field
+   */
+  public function x_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['x']) ? $socials['x'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][x]' placeholder="https://x.com/your-profile" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render LinkedIn URL Field
+   */
+  public function linkedin_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['linkedin']) ? $socials['linkedin'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][linkedin]' placeholder="https://linkedin.com/in/your-profile" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render YouTube URL Field
+   */
+  public function youtube_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['youtube']) ? $socials['youtube'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][youtube]' placeholder="https://youtube.com/@your-channel" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render TikTok URL Field
+   */
+  public function tiktok_render() {
+    $socials = $this->get_option('socials');
+    $option  = isset($socials['tiktok']) ? $socials['tiktok'] : '';
+    ?>
+    <input type='url' name='maintenance_mode_settings_polyplugins[socials][tiktok]' placeholder="https://tiktok.com/@your-profile" value='<?php echo esc_url($option); ?>'>
+    <?php
+  }
+
+  /**
+   * Render Email Field
+   */
+  public function email_render() {
+    $contact = $this->get_option('contact');
+    $option  = isset($contact['email']) ? $contact['email'] : '';
+    ?>
+    <input type='email' name='maintenance_mode_settings_polyplugins[contact][email]' placeholder="your@email.com" value='<?php echo esc_html($option); ?>'>
+    <?php
+  }
+
+   /**
+   * Render Phone Field
+   */
+  public function phone_render() {
+    $contact = $this->get_option('contact');
+    $option  = isset($contact['phone']) ? $contact['phone'] : '';
+    ?>
+    <input type='tel' name='maintenance_mode_settings_polyplugins[contact][phone]' placeholder="1234567890" value='<?php echo esc_html($option); ?>'>
+    <?php
+  }
 }
 
 $maintenance_mode_made_easy = new Maintenance_Mode_Made_Easy();
