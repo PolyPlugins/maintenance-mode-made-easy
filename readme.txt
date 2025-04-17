@@ -1,8 +1,8 @@
 === Maintenance Mode Made Easy ===
 Contributors: polyplugins
-Tags: maintenance, maintenace mode, maintenance page, under construction, woocommerce
+Tags: maintenance, maintenance mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,8 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 * Enable or disable maintenance mode effortlessly from the WordPress admin bar, no complicated settings required.
 * Automatically sends a 503 HTTP status header to inform search engines your site is temporarily unavailable, preserving your SEO rankings.
 * Personalize the heading, message, color, background color, background color opacity (can also overlay background images), and background image displayed on the maintenance page to match your site’s tone and brand.
+* Add contact icons for users to reach you during maintenance.
+* Add social icons with links to your social media pages.
 * Track maintenance page visits seamlessly with built-in Google Analytics & Matomo integration, which also checks for the [Complianz](https://wordpress.org/plugins/complianz-gdpr/) "cmplz_statistics" cookie before tracking.
 * Blocks new WooCommerce orders during maintenance mode to prevent additional orders from being processed via AJAX.
 * Build your own from the ground up maintenance page by creating a new maintenance.php in your active theme folder and selecting the "Custom" template in the settings.
@@ -27,8 +29,13 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 
 ## Roadmap
 
+* Add role selector
 * Start / End Date & Time
+* Add EDD check
+* Add preview button in backend
+* Pull Yoast title and desc and append Under Maintenance to it
 * Design and build additional templates
+* Add a builder
 * Redesign of settings page
 
 
@@ -64,10 +71,16 @@ This plugin collects and stores certain data on your server to ensure proper fun
 1. Maintenance Mode Preview
 2. General Settings
 3. Design Settings
-4. Analytic Settings
+4. Contact Settings
+5. Social Settings
+6. Analytic Settings
 
 
 == Changelog ==
+
+= 1.0.3 =
+* Bugfix: Contact icons not linking correctly
+* Bugfix: Contact icons not spaced properly
 
 = 1.0.2 =
 * Added: WYSIWYG editor for content section

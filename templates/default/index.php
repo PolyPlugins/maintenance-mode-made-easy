@@ -37,12 +37,12 @@
             ?>
             <div class="contact-icons">
               <?php if (!empty($contact['email'])): ?> 
-                <a href="mainto:<?php echo esc_html($contact['email']); ?>" target="_blank" rel="noopener noreferrer" title="Email Us">
+                <a href="mailto:<?php echo esc_html($contact['email']); ?>" target="_blank" rel="noopener noreferrer" title="Email Us">
                 <div style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/envelope.svg'); ?>')"></div>
                 </a>
               <?php endif; ?>
               <?php if (!empty($contact['phone'])): ?>
-                <a href="mainto:<?php echo esc_attr($contact['phone']); ?>" target="_blank" rel="noopener noreferrer" title="Call Us">
+                <a href="tel:<?php echo esc_attr($contact['phone']); ?>" target="_blank" rel="noopener noreferrer" title="Call Us">
                 <div style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/phone.svg'); ?>')"></div>
                 </a>
               <?php endif; ?>  

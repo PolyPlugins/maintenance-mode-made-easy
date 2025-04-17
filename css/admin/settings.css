@@ -210,17 +210,13 @@ a.btn.btn-dark {
   background-color: #212529!important;
   border-color: #212529!important;
 }
-
-input[type=checkbox]:checked::before {
-}
 /* Bootstrap End */
 
 
-/* SVG Icon Containers */
+/* SVG Icon */
 .nav-links a div {
   width: 21px;
   height: 21px;
-  /* SVG masking for color control */
   -webkit-mask-image: var(--icon-url);
   mask-image: var(--icon-url);
   -webkit-mask-size: contain;
@@ -229,7 +225,6 @@ input[type=checkbox]:checked::before {
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  /* Use currentColor to match parent's color property */
   background-color: currentColor;
 }
 
@@ -253,7 +248,7 @@ input[type=checkbox]:checked::before {
 .wp-switch-editor {
   margin: 0 !important;
   padding: 2px 15px !important;  /* Reduced top/bottom padding from 3px to 2px */
-  border: 1px solid #ddd !important;
   line-height: 1.4 !important;   /* Added to control text vertical position */
   height: 25px !important;       /* Added to ensure consistent height */
+  border: 1px solid #ddd !important;
 }

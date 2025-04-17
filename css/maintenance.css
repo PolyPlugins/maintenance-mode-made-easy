@@ -1,21 +1,17 @@
-/* Social Icons Section
------------------------------------------ */
+/* Social Icons */
 .social-icons {
   margin-bottom: 1rem;
 }
 
-/* Social Icon Links */
 .social-icons a {
   display: inline-block;
   margin: 0 10px;
   color: inherit;
 }
 
-/* SVG Icon Containers */
 .social-icons a div {
   width: 24px;
   height: 24px;
-  /* SVG masking for color control */
   -webkit-mask-image: var(--icon-url);
   mask-image: var(--icon-url);
   -webkit-mask-size: contain;
@@ -24,25 +20,23 @@
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  /* Use currentColor to match parent's color property */
   background-color: currentColor;
 }
 
-/* Contact Icons Section
------------------------------------------------ */
+/* Contact Icons */
+.contact-icons {
+  margin-top: 20px!important;
+}
 
-/* Contact Icon Links */
 .contact-icons a {
   display: inline-block;
   margin: 0 10px;
   color: inherit;
 }
 
-/* SVG Icon Containers */
 .contact-icons a div {
   width: 30px;
   height: 30px;
-  /* SVG masking for color control */
   -webkit-mask-image: var(--icon-url);
   mask-image: var(--icon-url);
   -webkit-mask-size: contain;
@@ -51,13 +45,11 @@
   mask-position: center;
   -webkit-mask-repeat: no-repeat;
   mask-repeat: no-repeat;
-  /* Use currentColor to match parent's color property */
   background-color: currentColor;
 }
 
 
-/* Footer Section
------------------------------------------ */
+/* Footer */
 .footer-content {
   position: fixed;
   bottom: 20px;
@@ -66,13 +58,11 @@
   text-align: center;
 }
 
-/* Footer Links */
 .footer-content a {
   color: inherit;
   text-decoration: none;
 }
 
-/* Privacy Policy Text */
 .privacy-text {
   font-size: 14px;
   opacity: 0.8;
