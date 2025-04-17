@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Maintenance Mode Made Easy
  * Description: A lightweight plugin to display a maintenance mode message for visitors.
- * Version: 1.0.4
+ * Version: 1.0.5
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Author: Poly Plugins

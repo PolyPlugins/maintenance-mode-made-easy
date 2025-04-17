@@ -103,7 +103,7 @@ class Utils {
    *
    * @return void
    */
-  private function clear_cache()
+  public static function clear_cache()
   {
     wp_cache_flush();
 
