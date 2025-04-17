@@ -3,7 +3,7 @@
 /**
  * Plugin Name: Maintenance Mode Made Easy
  * Description: A lightweight plugin to display a maintenance mode message for visitors.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Requires at least: 6.5
  * Requires PHP: 7.4
  * Author: Poly Plugins
@@ -246,6 +246,10 @@ class Maintenance_Mode_Made_Easy
    * @return void
    */
   public function maybe_stop_woocommerce_checkout($fields, $errors) {
+    if (current_user_can('manage_options')) {
+      return;
+    }
+
     if ($this->is_maintenance_enabled()) {
       $errors->add('validation', 'Checkout is temporarily disabled due to maintenance. Please try again later.');
     }

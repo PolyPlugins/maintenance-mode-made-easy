@@ -2,7 +2,7 @@
 Contributors: polyplugins
 Tags: maintenance, maintenace mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -50,6 +50,7 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 ## Assets
+
 [Under Construction Keyboard](https://www.pexels.com/photo/under-construction-signage-on-laptop-keyboard-211122/)
 
 
@@ -70,6 +71,9 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 == Changelog ==
+
+= 1.0.1 =
+* Bugfix: Admins not able to bypass maintenance order restrictions when performing test orders
 
 = 1.0.0 =
 * Initial Release
