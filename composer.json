@@ -1,0 +1,10 @@
+{
+  "autoload": {
+      "psr-4": {
+          "PolyPlugins\\Maintenance_Mode_Made_Easy\\": "includes/classes/"
+      }
+  },
+  "scripts": {
+    "autoload": "composer dump-autoload"
+  }
+}
