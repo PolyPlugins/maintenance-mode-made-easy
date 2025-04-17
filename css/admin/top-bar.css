@@ -1,0 +1,8 @@
+#wpadminbar #wp-admin-bar-maintenance_mode.active, #wpadminbar #wp-admin-bar-maintenance_mode.active.hover {
+  background-color: #00A22B!important;
+}
+
+#wpadminbar .ab-top-menu>#wp-admin-bar-maintenance_mode.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>#wp-admin-bar-maintenance_mode>.ab-item:focus, #wpadminbar:not(.mobile) .ab-top-menu>#wp-admin-bar-maintenance_mode:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>#wp-admin-bar-maintenance_mode>.ab-item:focus {
+  background-color: #00A22B!important;
+  color: #fff!important;
+}
