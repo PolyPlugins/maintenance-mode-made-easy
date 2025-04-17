@@ -1,6 +1,6 @@
 ![Maintenance Mode Preview](.wordpress-org/banner-1880x609.png)
 
-## Description
+## About
 
 Easily manage your site’s maintenance mode with **Maintenance Mode Made Easy**, a lightweight and user-friendly WordPress plugin. Designed to give you full control while keeping things simple, this plugin ensures your site’s downtime is professional and hassle-free.
 
