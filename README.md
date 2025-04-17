@@ -46,12 +46,12 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 ## Screenshots
 
-1. ![Maintenance Mode Preview](.wordpress-org/screenshot-1.png)
-2. ![General Settings](.wordpress-org/screenshot-2.png)
-3. ![Design Settings](.wordpress-org/screenshot-3.png)
-4. ![Contact Settings](.wordpress-org/screenshot-4.png)
-5. ![Social Settings](.wordpress-org/screenshot-5.png)
-6. ![Analytic Settings](.wordpress-org/screenshot-6.png)
+![Maintenance Mode Preview](.wordpress-org/screenshot-1.png)
+![General Settings](.wordpress-org/screenshot-2.png)
+![Design Settings](.wordpress-org/screenshot-3.png)
+![Contact Settings](.wordpress-org/screenshot-4.png)
+![Social Settings](.wordpress-org/screenshot-5.png)
+![Analytic Settings](.wordpress-org/screenshot-6.png)
 
 ## Installation
 
