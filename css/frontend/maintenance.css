@@ -1,0 +1,48 @@
+/* Social Icons */
+.social-icons {
+  margin-bottom: 1rem;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons a .bi {
+  font-size: 24px;
+}
+
+/* Contact Icons */
+.contact-icons {
+  margin-top: 20px!important;
+}
+
+.contact-icons a {
+  display: inline-block;
+  margin: 0 10px;
+  color: inherit;
+}
+
+.contact-icons a .bi {
+  font-size: 30px;
+}
+
+
+/* Footer */
+.footer-content {
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.footer-content a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.privacy-text {
+  font-size: 14px;
+  opacity: 0.8;
+} 

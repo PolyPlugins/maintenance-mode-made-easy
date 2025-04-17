@@ -1,6 +1,7 @@
 jQuery(document).ready(function ($) {
 
   initTabs();
+  initSelect2();
   initColorPicker();
   initRangeSlider();
   initMediaUploader();
@@ -30,6 +31,22 @@ jQuery(document).ready(function ($) {
           tab.show();
         }
       });
+    });
+  }
+
+  function initSelect2() {
+    $('#bypass_roles').select2({
+      width: '100%',
+      dropdownAutoWidth: true,
+      placeholder: $('#bypass_roles').data('placeholder'),
+      allowClear: true,
+      closeOnSelect: true,
+      dropdownCssClass: 'wp-core-ui',
+      language: {
+        noResults: function() {
+          return 'No roles Found';
+        }
+      }
     });
   }
 

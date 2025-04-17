@@ -8,6 +8,16 @@
   }
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0;}
+}
+
 h1 {
   font-size: x-large!important;
   margin: 40px 0!important;
@@ -32,18 +42,108 @@ input[type="range"] {
 }
 
 .ctas h2 {
-  font-size: large;
+  font-size: 22px!important;
+}
+
+.notice, div.error, div.updated  {
+  margin-top: 20px;
+  margin-bottom: -25px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: opacity 0.5s ease-in;
+  animation: fadeIn 0.5s forwards;
+}
+
+.notice-dismiss {
+  color: #46BEA4 !important;
+  transition: opacity 0.5s ease-out;
+}
+
+.notice-success, 
+div.updated {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  border-left-color: #46BEA4 !important;
+  border: 2px solid #46BEA4;
+  border-radius: 5px;
+  line-height: 0;
+  border-left-width: 8px;
+  text-transform: uppercase;
+}
+
+.wp-die-message, p {
+  font-size: 14px;
 }
 
 .form-table {
   margin: 0;
 }
 
+/* Main selection box */
+.select2-container--default .select2-selection--multiple {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  min-height: 34px;
+  line-height: 1.428571429;
+}
+
+/* Selected items in the box */
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: #46BEA4 !important;
+  border: 1px solid #3aa18a;
+  border-radius: 4px;
+  margin: 4px 0 0 4px;
+  padding: 3px 6px;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Dropdown hover state */
+.select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background-color: #46BEA4 !important;
+  color: #fff;
+}
+
+/* Dropdown menu */
+.tab .select2-container--default .select2-dropdown {
+  border: 1px solid #46BEA4;
+  border-radius: 4px;
+  box-shadow: 0 6px 12px rgba(0,0,0,.175);
+}
+
+/* Focus state */
+.tab .select2-container--default.select2-container--focus .select2-selection--multiple {
+  border-color: #46BEA4;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(70, 190, 164, 0.6);
+}
+
+/* Close role button coloring */
+.tab .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: white;
+}
+
 .nav-links ul {
   background-color: #fff;
-  padding: 20px;
+  padding: 20px!important;
   border-radius: 5px;
   width: 100%;
+}
+
+.nav-links li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.nav-links li:is(:last-child) {
+  margin-bottom: 0px;
 }
 
 .nav-links li a {
@@ -212,26 +312,17 @@ a.btn.btn-dark {
 }
 /* Bootstrap End */
 
-
-/* SVG Icon */
-.nav-links a div {
-  width: 21px;
-  height: 21px;
-  -webkit-mask-image: var(--icon-url);
-  mask-image: var(--icon-url);
-  -webkit-mask-size: contain;
-  mask-size: contain;
-  -webkit-mask-position: center;
-  mask-position: center;
-  -webkit-mask-repeat: no-repeat;
-  mask-repeat: no-repeat;
-  background-color: currentColor;
+/* Icons */
+.nav-links a .bi {
+  font-size: 21px;
+  margin-right: 10px;
 }
 
 .nav-links .icon {
   margin-right: 10px;
 }
 
+/* Editor */
 .wp-editor-tabs {
   position: relative;
   top: 9px !important;

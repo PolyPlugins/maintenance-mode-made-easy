@@ -1,4 +1,10 @@
-<?php if (!defined('ABSPATH')) die; ?>
+<?php
+
+use PolyPlugins\Maintenance_Mode_Made_Easy\Utils;
+
+if (!defined('ABSPATH')) die;
+
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,13 +13,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo esc_html(get_bloginfo('name')); ?></title>
     <meta name="description" content="<?php echo esc_html(get_bloginfo('description')); ?>" />
-    <link href="<?php echo esc_html($this->plugin_dir_url . '/css/bootstrap.min.css'); ?>" rel="stylesheet">
-    <link href="<?php echo esc_html($this->plugin_dir_url . '/css/maintenance.css'); ?>" rel="stylesheet">
-    <?php include $this->plugin_dir . "/template-parts/head.php"; ?>
+    <link href="<?php echo esc_url($this->plugin_dir_url . '/css/frontend/maintenance.css'); ?>" rel="stylesheet">
+    <link href="<?php echo esc_url($this->plugin_dir_url . '/css/bootstrap.min.css'); ?>" rel="stylesheet">
+    <link href="<?php echo esc_url($this->plugin_dir_url . '/css/bootstrap-icons.min.css'); ?>" rel="stylesheet">
+
+    <?php include plugin_dir_path($this->plugin) . "/template-parts/head.php"; ?>
+
     <style>
       /* Dynamic color styles - these need to stay here because they use PHP variables */
-      <?php 
-      $color = $this->get_option('color');
+      <?php
+      $color = Utils::get_option('color');
       ?>
       /* Apply text color to links */
       .social-icons a,
@@ -26,11 +35,11 @@
   <body>
     <div class="container d-flex align-items-center justify-content-center vh-100">
       <div class="row text-center">
-        <h1><?php echo esc_html($this->get_option('heading')); ?></h1>
-        <div class="content"><?php echo wp_kses_post($this->get_option('content')); ?></div>
+        <h1><?php echo esc_html(Utils::get_option('heading')); ?></h1>
+        <div class="content"><?php echo wp_kses_post(Utils::get_option('content')); ?></div>
           <?php
           // Get Contact
-          $contact = $this->get_option('contact');
+          $contact = Utils::get_option('contact');
 
           // Display contact icons
           if ($contact) {
@@ -38,12 +47,12 @@
             <div class="contact-icons">
               <?php if (!empty($contact['email'])): ?> 
                 <a href="mailto:<?php echo esc_html($contact['email']); ?>" target="_blank" rel="noopener noreferrer" title="Email Us">
-                <div style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/envelope.svg'); ?>')"></div>
+                  <i class="bi bi-envelope-open-fill"></i>
                 </a>
               <?php endif; ?>
               <?php if (!empty($contact['phone'])): ?>
                 <a href="tel:<?php echo esc_attr($contact['phone']); ?>" target="_blank" rel="noopener noreferrer" title="Call Us">
-                <div style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/phone.svg'); ?>')"></div>
+                  <i class="bi bi-telephone-fill"></i>
                 </a>
               <?php endif; ?>  
             </div>
@@ -57,7 +66,7 @@
       <?php
 
       // Get socials
-      $socials = $this->get_option('socials');
+      $socials = Utils::get_option('socials');
 
       // Display social icons if any are set
       if ($socials) {
@@ -66,7 +75,7 @@
           <?php foreach ($socials as $platform => $url) : ?>
             <?php if ($url) : ?>
               <a href="<?php echo esc_url($url); ?>" target="_blank" rel="noopener noreferrer" title="<?php echo esc_attr(ucwords(str_replace('-', ' ', $platform))); ?>">
-                <div style="--icon-url: url('<?php echo esc_url($this->plugin_dir_url . '/images/icons/' . $platform . '.svg'); ?>')"></div>
+                <i class="bi bi-<?php echo $platform === 'x' ? 'twitter-x' : esc_attr($platform); ?>"></i>
               </a>
             <?php endif; ?>
           <?php endforeach; ?>

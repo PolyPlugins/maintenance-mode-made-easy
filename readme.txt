@@ -2,7 +2,7 @@
 Contributors: polyplugins
 Tags: maintenance, maintenance mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -21,6 +21,7 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 * Personalize the heading, message, color, background color, background color opacity (can also overlay background images), and background image displayed on the maintenance page to match your site’s tone and brand.
 * Add contact icons for users to reach you during maintenance.
 * Add social icons with links to your social media pages.
+* Select additional roles that can bypass maintenance mode.
 * Track maintenance page visits seamlessly with built-in Google Analytics & Matomo integration, which also checks for the [Complianz](https://wordpress.org/plugins/complianz-gdpr/) "cmplz_statistics" cookie before tracking.
 * Blocks new WooCommerce orders during maintenance mode to prevent additional orders from being processed via AJAX.
 * Build your own from the ground up maintenance page by creating a new maintenance.php in your active theme folder and selecting the "Custom" template in the settings.
@@ -29,7 +30,6 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 
 ## Roadmap
 
-* Add role selector
 * Start / End Date & Time
 * Add EDD check
 * Add preview button in backend
@@ -43,7 +43,7 @@ Easily manage your site’s maintenance mode with Maintenance Mode Made Easy, a 
 
 We are not lawyers and always recommend doing your own compliance research into third party plugins, libraries, ect, as we've seen other maintenance plugins not be in compliance with these regulations.
 
-This plugin uses Bootstrap & Font Awesome 3rd party libraries. These libraries are loaded locally to be compliant with data protection regulations.
+This plugin uses Bootstrap, Bootstrap Icons, and Select2 3rd party libraries. These libraries are loaded locally to be compliant with data protection regulations.
 
 This plugin has the capability to use Google Analytics and Matomo. If you enable this option, please make sure you are in compliance with data processing regulations. We currently have checks for the [Complianz](https://wordpress.org/plugins/complianz-gdpr/) "cmplz_statistics" cookie before tracking, but if you do not use Complianz you will need to build your own integration out. You can also put in a [feature request](https://www.polyplugins.com/contact/) for the compliance plugin you use, and we'll look into integrating it.
 
@@ -77,6 +77,15 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 == Changelog ==
+
+= 1.0.4 =
+Added: Setting for additional roles to bypass Maintenance Mode
+Added: Bootstrap Icons
+Updated: Default options
+Updated: Top bar to also be green on frontend when in Maintenance Mode.
+Removed: Font Awesome
+Bugfix: Setting menu styling
+Optimization: Refactored codebase
 
 = 1.0.3 =
 * Bugfix: Contact icons not linking correctly

@@ -1,15 +1,18 @@
 <?php
+
+use PolyPlugins\Maintenance_Mode_Made_Easy\Utils;
+
 if (!defined('ABSPATH')) die;
-$color                    = $this->get_option('color');
-$background_color         = $this->get_option('background_color');
-$background_color_opacity = $this->get_option('background_color_opacity');
-$background_color_rgba    = $this->hex_to_rgba($background_color, $background_color_opacity);
-$background_image         = $this->get_option('background_image');
+$color                    = Utils::get_option('color');
+$background_color         = Utils::get_option('background_color');
+$background_color_opacity = Utils::get_option('background_color_opacity');
+$background_color_rgba    = Utils::hex_to_rgba($background_color, $background_color_opacity);
+$background_image         = Utils::get_option('background_image');
 $statistics_consent       = isset($_COOKIE['cmplz_statistics']) ? sanitize_text_field(wp_unslash($_COOKIE['cmplz_statistics'])) : '';
-$analytics                = $this->get_option('analytics');
-$ga_tracking_id           = $this->get_option('ga_tracking_id');
-$matomo_url               = $this->get_option('matomo_url');
-$gdpr_bypass              = $this->get_option('gdpr_bypass');
+$analytics                = Utils::get_option('analytics');
+$ga_tracking_id           = Utils::get_option('ga_tracking_id');
+$matomo_url               = Utils::get_option('matomo_url');
+$gdpr_bypass              = Utils::get_option('gdpr_bypass');
 ?>
 <?php if ($statistics_consent === 'allow' || $gdpr_bypass) : ?>
   <?php if ($analytics === 'google') : ?>
