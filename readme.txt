@@ -2,7 +2,7 @@
 Contributors: polyplugins
 Tags: maintenance, maintenance mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
