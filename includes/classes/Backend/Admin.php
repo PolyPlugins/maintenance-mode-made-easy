@@ -433,7 +433,8 @@ class Admin {
       
       <option value="custom"<?php echo $option == 'custom' ? ' selected' : ''; ?>>Custom</option>
     </select>
-    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/<?php echo esc_html(get_template()); ?>/</strong></p>
+    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/themes/<?php echo esc_html(get_template()); ?>/</strong></p>
+    <p><strong><?php _e("Note: If you don't use a child theme then updates to your theme will override the template.", 'maintenance-mode-made-easy'); ?></strong></p>
     <p><strong><?php _e('Using your own custom template will not use any of the below settings.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
