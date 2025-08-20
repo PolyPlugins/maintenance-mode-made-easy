@@ -2,7 +2,7 @@
 Contributors: polyplugins
 Tags: maintenance, maintenance mode, maintenance page, under construction, woocommerce
 Tested up to: 6.7
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,10 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 == Changelog ==
+
+= 1.0.8 =
+* Bugfix: Child theme not showing as an example
+* Bugfix: TypeError
 
 = 1.0.7 =
 * Added: Note about child theme

@@ -395,15 +395,15 @@ class Admin {
 	 * @return void
 	 */
 	public function bypass_roles_render() {
-    $selected_roles = Utils::get_option('bypass_roles');
+    $selected_roles = Utils::get_option('bypass_roles') ?: array();
     $roles = wp_roles()->get_names();
     ?>
     <div class="bypass-roles-wrapper">
     <select id="bypass_roles" 
-            name="maintenance_mode_settings_polyplugins[bypass_roles][]" 
-            multiple="multiple" 
-            class="regular-text select2-hidden-accessible" 
-            data-placeholder="<?php _e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
+      name="maintenance_mode_settings_polyplugins[bypass_roles][]" 
+      multiple="multiple" 
+      class="regular-text select2-hidden-accessible" 
+      data-placeholder="<?php _e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
       <?php foreach ($roles as $role_key => $role_name) : 
         if ($role_key == 'administrator') continue;
         ?>
@@ -433,7 +433,7 @@ class Admin {
       
       <option value="custom"<?php echo $option == 'custom' ? ' selected' : ''; ?>>Custom</option>
     </select>
-    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/themes/<?php echo esc_html(get_template()); ?>/</strong></p>
+    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/themes/<?php echo esc_html(get_stylesheet()); ?>/</strong></p>
     <p><strong><?php _e("Note: If you don't use a child theme then updates to your theme will override the template.", 'maintenance-mode-made-easy'); ?></strong></p>
     <p><strong><?php _e('Using your own custom template will not use any of the below settings.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
