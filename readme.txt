@@ -78,20 +78,24 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 == Changelog ==
 
+= 1.0.7 =
+* Added: Note about child theme
+* Updated: Translations
+
 = 1.0.6 =
-Added: Translation capabilities
+* Added: Translation capabilities
 
 = 1.0.5 =
-Bugfix: Cache causing error when maintenance mode is disabled
+* Bugfix: Cache causing error when maintenance mode is disabled
 
 = 1.0.4 =
-Added: Setting for additional roles to bypass Maintenance Mode
-Added: Bootstrap Icons
-Updated: Default options
-Updated: Top bar to also be green on frontend when in Maintenance Mode.
-Removed: Font Awesome
-Bugfix: Setting menu styling
-Optimization: Refactored codebase
+* Added: Setting for additional roles to bypass Maintenance Mode
+* Added: Bootstrap Icons
+* Updated: Default options
+* Updated: Top bar to also be green on frontend when in Maintenance Mode.
+* Removed: Font Awesome
+* Bugfix: Setting menu styling
+* Optimization: Refactored codebase
 
 = 1.0.3 =
 * Bugfix: Contact icons not linking correctly

@@ -62,6 +62,10 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 ## Changelog
 
+### 1.0.7
+- **Added**: Note about child theme
+- **Updated**: Translations
+
 ### 1.0.6
 - **Added**: Translation capabilities
 

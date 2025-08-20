@@ -9,34 +9,34 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-03-09T09:33:55+00:00\n"
+"POT-Creation-Date: 2025-08-20T12:08:59+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"X-Generator: WP-CLI 2.10.0\n"
+"X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: maintenance-mode-made-easy\n"
 
 #. Plugin Name of the plugin
-#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: maintenance-mode-made-easy.php
 #: includes/classes/Backend/Admin.php:109
 msgid "Maintenance Mode Made Easy"
 msgstr ""
 
 #. Plugin URI of the plugin
-#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: maintenance-mode-made-easy.php
 msgid "https://www.polyplugins.com/contact/"
 msgstr ""
 
 #. Description of the plugin
-#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: maintenance-mode-made-easy.php
 msgid "A lightweight plugin to display a maintenance mode message for visitors."
 msgstr ""
 
 #. Author of the plugin
-#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: maintenance-mode-made-easy.php
 msgid "Poly Plugins"
 msgstr ""
 
 #. Author URI of the plugin
-#: maintenance-mode-made-easy\maintenance-mode-made-easy.php
+#: maintenance-mode-made-easy.php
 msgid "https://www.polyplugins.com"
 msgstr ""
 
@@ -90,7 +90,7 @@ msgid "Background Image"
 msgstr ""
 
 #: includes/classes/Backend/Admin.php:245
-#: includes/classes/Backend/Admin.php:721
+#: includes/classes/Backend/Admin.php:722
 msgid "Analytics"
 msgstr ""
 
@@ -168,83 +168,91 @@ msgid "Selecting custom will allow you to build your own custom template. Simply
 msgstr ""
 
 #: includes/classes/Backend/Admin.php:437
+msgid "Note: If you don't use a child theme then updates to your theme will override the template."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:438
 msgid "Using your own custom template will not use any of the below settings."
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:449
+#: includes/classes/Backend/Admin.php:450
 msgid "Enter the heading for the maintenance page"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:518
+#: includes/classes/Backend/Admin.php:519
 msgid "Select Image"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:519
+#: includes/classes/Backend/Admin.php:520
 msgid "Remove"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:524
+#: includes/classes/Backend/Admin.php:525
 msgid "Background Image Preview"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:541
+#: includes/classes/Backend/Admin.php:542
 msgid "Disabled"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:542
+#: includes/classes/Backend/Admin.php:543
 msgid "Google Analytics"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:543
+#: includes/classes/Backend/Admin.php:544
 msgid "Matomo"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:563
-#: includes/classes/Backend/Admin.php:576
+#: includes/classes/Backend/Admin.php:564
+#: includes/classes/Backend/Admin.php:577
 msgid "Before enabling, make sure you are in compliance with data protection regulations."
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:590
+#: includes/classes/Backend/Admin.php:591
 msgid "For analytics tracking, we currently check for user consent using"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:590
+#: includes/classes/Backend/Admin.php:591
 msgid "Complianz"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:590
+#: includes/classes/Backend/Admin.php:591
 msgid "which is not currently installed."
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:591
+#: includes/classes/Backend/Admin.php:592
 msgid "If you use another consent plugin, please"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:591
-msgid "and we'll look into integrating it."
+#: includes/classes/Backend/Admin.php:592
+msgid "let us know"
 msgstr ""
 
 #: includes/classes/Backend/Admin.php:592
+msgid "and we'll look into integrating it."
+msgstr ""
+
+#: includes/classes/Backend/Admin.php:593
 msgid "Bypass at your own risk"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:699
+#: includes/classes/Backend/Admin.php:700
 msgid "Maintenance Mode Made Easy Settings"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:709
+#: includes/classes/Backend/Admin.php:710
 msgid "General"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:715
+#: includes/classes/Backend/Admin.php:716
 msgid "Design"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:727
+#: includes/classes/Backend/Admin.php:728
 msgid "Social"
 msgstr ""
 
-#: includes/classes/Backend/Admin.php:733
+#: includes/classes/Backend/Admin.php:734
 msgid "Contact"
 msgstr ""
 
