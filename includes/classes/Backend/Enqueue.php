@@ -60,10 +60,10 @@ class Enqueue {
    * @return void
    */
   private function enqueue_styles() {
-    wp_enqueue_style('maintenance-mode-settings', plugins_url('/css/backend/settings.css', $this->plugin), array(), $this->version);
     wp_enqueue_style('bootstrap', plugins_url('/css/backend/bootstrap-wrapper.min.css', $this->plugin), array(), $this->version);
     wp_enqueue_style('bootstrap-icons', plugins_url('/css/bootstrap-icons.min.css', $this->plugin), array(), $this->version);
     wp_enqueue_style('select2', plugins_url('/css/backend/select2.min.css', $this->plugin), array(), $this->version);
+    wp_enqueue_style('maintenance-mode-settings', plugins_url('/css/backend/settings.css', $this->plugin), array('select2'), $this->version);
   }
   
   /**

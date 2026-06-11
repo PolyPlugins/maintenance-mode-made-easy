@@ -74,6 +74,11 @@ div.updated {
   text-transform: uppercase;
 }
 
+.notice-error,
+div.error {
+  display: none !important;
+}
+
 .wp-die-message, p {
   font-size: 14px;
 }
@@ -86,24 +91,80 @@ div.updated {
 .select2-container--default .select2-selection--multiple {
   border: 1px solid #ccc;
   border-radius: 4px;
-  min-height: 34px;
+  min-height: 38px;
   line-height: 1.428571429;
+  padding: 0 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered {
+  display: flex !important;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+  padding: 4px !important;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__rendered li {
+  float: none !important;
 }
 
 /* Selected items in the box */
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
   background-color: #46BEA4 !important;
-  border: 1px solid #3aa18a;
-  border-radius: 4px;
-  margin: 4px 0 0 4px;
-  padding: 3px 6px;
+  border: 1px solid #3aa18a !important;
+  border-radius: 999px !important;
+  margin: 0 !important;
+  padding: 5px 12px !important;
   color: #fff;
   line-height: 1.4;
+  display: inline-flex !important;
+  align-items: center;
+  flex: 0 0 auto;
+}
+
+.select2-container--default .select2-selection--multiple .select2-search--inline {
+  float: none !important;
+  flex: 1 1 0;
+  min-width: 2em;
+  margin: 0 !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-search--inline .select2-search__field {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  width: 100% !important;
+  min-width: 2em;
+}
+
+.select2-container--default .select2-selection--multiple .select2-search--inline .select2-search__field:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 4px 0 0 !important;
+  margin: 0;
+  color: #fff !important;
+  line-height: 1;
+  font-weight: normal;
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice__remove:hover {
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.1);
+  color: #fff !important;
+  background-color: transparent !important;
 }
 
 /* Dropdown hover state */
@@ -124,11 +185,6 @@ div.updated {
   border-color: #46BEA4;
   outline: 0;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(70, 190, 164, 0.6);
-}
-
-/* Close role button coloring */
-.tab .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
-  color: white;
 }
 
 .nav-links ul {
@@ -223,7 +279,7 @@ p.submit {
   overflow-x: hidden;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"]:not(.form-check-input) {
   border-radius: 5px!important;
 }
 
@@ -244,7 +300,7 @@ select, input {
   margin-bottom: 1.2rem;
 }
 
-input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+input[type=checkbox]:not(.form-check-input):focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
   border-color: #46BEA4!important;
   box-shadow: none!important;
 }
@@ -263,9 +319,63 @@ input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, inp
   text-decoration: none;
 }
 
-input[role=switch]:checked {
+input[type=checkbox]:not(.form-check-input):checked {
   background-color: #46BEA4!important;
   border-color: #46BEA4!important;
+}
+
+input[type=checkbox]:not(.form-check-input):checked::before {
+  display: none;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: none !important;
+  width: 2em;
+  height: 1em;
+  border-radius: 2em !important;
+  border: 1px solid #e2e2e2 !important;
+  background-color: #ccc !important;
+  position: relative;
+  margin-top: 2px !important;
+  vertical-align: middle;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input::before {
+  content: none !important;
+  display: none !important;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input::after {
+  content: '' !important;
+  position: absolute;
+  top: 50%;
+  left: 1px;
+  width: calc(1em - 2px);
+  height: calc(1em - 2px);
+  border-radius: 50%;
+  background-color: #fff;
+  transform: translateY(-50%);
+  transition: transform .15s ease-in-out;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input:checked,
+.bootstrap-wrapper .form-switch .form-check-input:checked:focus,
+.bootstrap-wrapper .form-switch .form-check-input:checked:hover {
+  background-color: #46BEA4 !important;
+  border-color: #46BEA4 !important;
+  background-image: none !important;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input:checked::before {
+  content: none !important;
+  display: none !important;
+}
+
+.bootstrap-wrapper .form-switch .form-check-input:checked::after {
+  transform: translate(calc(2em - 100% - 2px), -50%);
 }
 
 a.btn.btn-primary {
