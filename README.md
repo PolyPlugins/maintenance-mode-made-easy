@@ -65,6 +65,11 @@ This plugin collects and stores certain data on your server to ensure proper fun
 ### 1.0.9
 * Updated: Tested up to
 * Updated: Translation handling
+* Updated: Badge styling
+* Updated: Notice hiding on settings page
+* Bugfix: Toggle switch has two dots in WordPress 7.0
+* Bugfix: Bootstrap icons were loading even when Maintenance was disabled.
+* Bugfix: Maintenance related hooks were still being registered when Maintenance is disabled.
 * Enhancement: Security
 
 ### 1.0.8
