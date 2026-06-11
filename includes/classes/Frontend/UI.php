@@ -45,6 +45,11 @@ class UI {
    */
   public function init() {
     add_action('init', array($this, 'maintenance_mode_check'));
+
+    if (!Utils::is_maintenance_enabled()) {
+      return;
+    }
+
     add_action('wp', array($this, 'maybe_show_maintenance_mode'), 0, 1);
 
     // Disable feeds
@@ -153,7 +158,7 @@ class UI {
     if (!is_user_logged_in() && !empty($is_maintenance_enabled)) {
       nocache_headers();
 
-      echo '<?xml version="1.0" encoding="UTF-8" ?><status>' . __('Service unavailable.', 'maintenance-mode-made-easy') . '</status>';
+      echo '<?xml version="1.0" encoding="UTF-8" ?><status>' . esc_html(__('Service unavailable.', 'maintenance-mode-made-easy')) . '</status>';
       
       exit;
     }

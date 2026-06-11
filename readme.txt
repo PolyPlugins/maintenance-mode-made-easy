@@ -1,8 +1,8 @@
 === Maintenance Mode Made Easy ===
 Contributors: polyplugins
 Tags: maintenance, maintenance mode, maintenance page, under construction, woocommerce
-Tested up to: 6.7
-Stable tag: 1.0.8
+Tested up to: 7.0
+Stable tag: 1.0.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -77,6 +77,16 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 
 == Changelog ==
+
+= 1.0.9 =
+* Updated: Tested up to
+* Updated: Translation handling
+* Updated: Badge styling
+* Updated: Notice hiding on settings page
+* Bugfix: Toggle switch has two dots in WordPress 7.0
+* Bugfix: Bootstrap icons were loading even when Maintenance was disabled.
+* Bugfix: Maintenance related hooks were still being registered when Maintenance is disabled.
+* Enhancement: Security
 
 = 1.0.8 =
 * Bugfix: Child theme not showing as an example

@@ -56,7 +56,7 @@ class Enqueue {
    * @return void
    */
   private function enqueue_styles() {
-    wp_enqueue_style('bootstrap-icons', plugins_url('/css/bootstrap-icons.min.css', $this->plugin), array(), $this->version);
+    // Frontend styles here
   }
   
   /**
