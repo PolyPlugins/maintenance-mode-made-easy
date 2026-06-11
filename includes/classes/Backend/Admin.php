@@ -355,7 +355,7 @@ class Admin {
 		$option = Utils::get_option('enabled'); // Get enabled option value
     ?>
     <div class="form-check form-switch">
-      <input type="checkbox" name="maintenance_mode_settings_polyplugins[enabled]" class="form-check-input" id="enabled" role="switch" <?php checked(1, $option, true); ?> /> <?php _e('Yes', 'maintenance-mode-made-easy'); ?>
+      <input type="checkbox" name="maintenance_mode_settings_polyplugins[enabled]" class="form-check-input" id="enabled" role="switch" <?php checked(1, $option, true); ?> /> <?php esc_html_e('Yes', 'maintenance-mode-made-easy'); ?>
     </div>
 		<?php
 	}
@@ -369,9 +369,9 @@ class Admin {
 		$option = Utils::get_option('temporary_header');
     ?>
     <div class="form-check form-switch">
-      <input type="checkbox" name="maintenance_mode_settings_polyplugins[temporary_header]" class="form-check-input" id="temporary_header" role="switch" <?php checked(1, $option, true); ?> /> <?php _e('Yes', 'maintenance-mode-made-easy'); ?>
+      <input type="checkbox" name="maintenance_mode_settings_polyplugins[temporary_header]" class="form-check-input" id="temporary_header" role="switch" <?php checked(1, $option, true); ?> /> <?php esc_html_e('Yes', 'maintenance-mode-made-easy'); ?>
     </div>
-    <p><strong><?php _e('Provide 503 header to show search engines the site is temporarily down?', 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Provide 503 header to show search engines the site is temporarily down?', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -384,8 +384,8 @@ class Admin {
 		$option = Utils::get_option('retry_header');
     ?>
     <input type='number' name='maintenance_mode_settings_polyplugins[retry_header]' step="60" value='<?php echo esc_html($option); ?>'>
-		<p><strong><?php _e('Provide a Retry After header in seconds.', 'maintenance-mode-made-easy'); ?></strong></p>
-		<p><strong><?php _e('If you believe your site will be in maintenance longer than 3600 seconds (1 hour) then adjust that here.', 'maintenance-mode-made-easy'); ?></strong></p>
+		<p><strong><?php esc_html_e('Provide a Retry After header in seconds.', 'maintenance-mode-made-easy'); ?></strong></p>
+		<p><strong><?php esc_html_e('If you believe your site will be in maintenance longer than 3600 seconds (1 hour) then adjust that here.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -403,7 +403,7 @@ class Admin {
       name="maintenance_mode_settings_polyplugins[bypass_roles][]" 
       multiple="multiple" 
       class="regular-text select2-hidden-accessible" 
-      data-placeholder="<?php _e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
+      data-placeholder="<?php esc_attr_e('Select roles that can bypass maintenance mode after logging in', 'maintenance-mode-made-easy'); ?>">
       <?php foreach ($roles as $role_key => $role_name) : 
         if ($role_key == 'administrator') continue;
         ?>
@@ -413,7 +413,7 @@ class Admin {
         </option>
       <?php endforeach; ?>
     </select>
-    <p><strong><?php _e('Aministrator is always bypassed', 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Aministrator is always bypassed', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
   }
 
@@ -433,9 +433,9 @@ class Admin {
       
       <option value="custom"<?php echo $option == 'custom' ? ' selected' : ''; ?>>Custom</option>
     </select>
-    <p><strong><?php _e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/themes/<?php echo esc_html(get_stylesheet()); ?>/</strong></p>
-    <p><strong><?php _e("Note: If you don't use a child theme then updates to your theme will override the template.", 'maintenance-mode-made-easy'); ?></strong></p>
-    <p><strong><?php _e('Using your own custom template will not use any of the below settings.', 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Selecting custom will allow you to build your own custom template. Simply create a maintenance.php file in', 'maintenance-mode-made-easy'); ?> /wp-content/themes/<?php echo esc_html(get_stylesheet()); ?>/</strong></p>
+    <p><strong><?php esc_html_e("Note: If you don't use a child theme then updates to your theme will override the template.", 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Using your own custom template will not use any of the below settings.', 'maintenance-mode-made-easy'); ?></strong></p>
 	  <?php
 	}
 
@@ -447,7 +447,7 @@ class Admin {
 	public function heading_render() {
 		$option = Utils::get_option('heading');
 	  ?>
-		<input type='text' name='maintenance_mode_settings_polyplugins[heading]' placeholder="<?php _e('Enter the heading for the maintenance page', 'maintenance-mode-made-easy'); ?>" value='<?php echo esc_html($option); ?>'>
+		<input type='text' name='maintenance_mode_settings_polyplugins[heading]' placeholder="<?php esc_attr_e('Enter the heading for the maintenance page', 'maintenance-mode-made-easy'); ?>" value='<?php echo esc_html($option); ?>'>
 	  <?php
 	}
 
@@ -516,13 +516,13 @@ class Admin {
     ?>
     <div id="background-image-uploader">
       <!-- Button to open the media uploader -->
-      <button type="button" class="button upload-background-image-button"><?php _e('Select Image', 'maintenance-mode-made-easy'); ?></button>
-      <button type="button" class="button remove-background-image-button" style="display: none;"><?php _e('Remove', 'maintenance-mode-made-easy'); ?></button>
+      <button type="button" class="button upload-background-image-button"><?php esc_html_e('Select Image', 'maintenance-mode-made-easy'); ?></button>
+      <button type="button" class="button remove-background-image-button" style="display: none;"><?php esc_html_e('Remove', 'maintenance-mode-made-easy'); ?></button>
       
       <!-- Preview of the selected image -->
       <div class="background-image-preview" style="margin-top: 10px;">
         <?php if (!empty($option)) : ?>
-          <img src="<?php echo esc_url($option); ?>" alt="<?php _e('Background Image Preview', 'maintenance-mode-made-easy'); ?>" style="max-width: 200px; height: auto;">
+          <img src="<?php echo esc_url($option); ?>" alt="<?php esc_attr_e('Background Image Preview', 'maintenance-mode-made-easy'); ?>" style="max-width: 200px; height: auto;">
         <?php endif; ?>
       </div>
 
@@ -561,7 +561,7 @@ class Admin {
 		$option = Utils::get_option('ga_tracking_id');
 	  ?>
 		<input type='text' name='maintenance_mode_settings_polyplugins[ga_tracking_id]' id="ga_tracking_id" placeholder="G-XXXXXXXXXX" value='<?php echo esc_html($option); ?>'<?php echo !class_exists('COMPLIANZ') ? ' disabled' : ''; ?>>
-    <p><strong><?php _e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
 	}
 
@@ -574,7 +574,7 @@ class Admin {
 		$option = Utils::get_option('matomo_url');
 	  ?>
 		<input type='text' name='maintenance_mode_settings_polyplugins[matomo_url]' id="matomo_url" placeholder="https://xxxxxxx.matomo.cloud/" value='<?php echo esc_html($option); ?>'<?php echo !class_exists('COMPLIANZ') ? ' disabled' : ''; ?>>
-    <p><strong><?php _e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
+    <p><strong><?php esc_html_e('Before enabling, make sure you are in compliance with data protection regulations.', 'maintenance-mode-made-easy'); ?></strong></p>
     <?php
 	}
 
@@ -588,9 +588,9 @@ class Admin {
 	  ?>
 	  <?php if (!class_exists('COMPLIANZ')) { ?>
       <div class="gdpr-bypass-container" style="background-color: #D63638; padding: 20px; color: #fff;">
-        <strong><?php _e('For analytics tracking, we currently check for user consent using', 'maintenance-mode-made-easy'); ?> <a href="https://wordpress.org/plugins/complianz-gdpr/" style="color: #fff;" target="_blank"><?php _e('Complianz', 'maintenance-mode-made-easy'); ?></a>, <?php _e('which is not currently installed.', 'maintenance-mode-made-easy'); ?>
-        <br><br><?php _e('If you use another consent plugin, please', 'maintenance-mode-made-easy'); ?> <a href="https://www.polyplugins.com/contact/" style="color: #fff;" target="_blank"><?php _e('let us know', 'maintenance-mode-made-easy'); ?></a> <?php _e("and we'll look into integrating it.", 'maintenance-mode-made-easy'); ?></strong>
-        <br><div style="margin-top: 20px; text-align: center;"><input type="checkbox" name="maintenance_mode_settings_polyplugins[gdpr_bypass]" id="gdpr_bypass" <?php checked(1, $option, true); ?> /> <?php _e('Bypass at your own risk', 'maintenance-mode-made-easy'); ?></div>
+        <strong><?php esc_html_e('For analytics tracking, we currently check for user consent using', 'maintenance-mode-made-easy'); ?> <a href="https://wordpress.org/plugins/complianz-gdpr/" style="color: #fff;" target="_blank"><?php esc_html_e('Complianz', 'maintenance-mode-made-easy'); ?></a>, <?php esc_html_e('which is not currently installed.', 'maintenance-mode-made-easy'); ?>
+        <br><br><?php esc_html_e('If you use another consent plugin, please', 'maintenance-mode-made-easy'); ?> <a href="https://www.polyplugins.com/contact/" style="color: #fff;" target="_blank"><?php esc_html_e('let us know', 'maintenance-mode-made-easy'); ?></a> <?php esc_html_e("and we'll look into integrating it.", 'maintenance-mode-made-easy'); ?></strong>
+        <br><div style="margin-top: 20px; text-align: center;"><input type="checkbox" name="maintenance_mode_settings_polyplugins[gdpr_bypass]" id="gdpr_bypass" <?php checked(1, $option, true); ?> /> <?php esc_html_e('Bypass at your own risk', 'maintenance-mode-made-easy'); ?></div>
       </div>
     <?php
     }
@@ -697,7 +697,7 @@ class Admin {
           <div class="row">
             <div class="col-3"></div>
             <div class="col-6">
-              <h1><?php _e('Maintenance Mode Made Easy Settings', 'maintenance-mode-made-easy'); ?></h1>
+              <h1><?php esc_html_e('Maintenance Mode Made Easy Settings', 'maintenance-mode-made-easy'); ?></h1>
             </div>
             <div class="col-3"></div>
           </div>
@@ -707,31 +707,31 @@ class Admin {
                 <li>
                   <a href="javascript:void(0);" class="active" data-section="general">
                     <i class="bi bi-gear-fill"></i>
-                    <?php _e('General', 'maintenance-mode-made-easy'); ?>
+                    <?php esc_html_e('General', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="design">
                     <i class="bi bi-palette-fill"></i>
-                    <?php _e('Design', 'maintenance-mode-made-easy'); ?>
+                    <?php esc_html_e('Design', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="analytics">
                     <i class="bi bi-pie-chart-fill"></i>
-                    <?php _e('Analytics', 'maintenance-mode-made-easy'); ?>
+                    <?php esc_html_e('Analytics', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="social">
                     <i class="bi bi-share-fill"></i>
-                    <?php _e('Social', 'maintenance-mode-made-easy'); ?>
+                    <?php esc_html_e('Social', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
                 <li>
                   <a href="javascript:void(0);" data-section="contact">
                     <i class="bi bi-person-lines-fill"></i>
-                    <?php _e('Contact', 'maintenance-mode-made-easy'); ?>
+                    <?php esc_html_e('Contact', 'maintenance-mode-made-easy'); ?>
                   </a>
                 </li>
               </ul>

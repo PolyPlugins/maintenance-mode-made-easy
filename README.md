@@ -62,41 +62,46 @@ This plugin collects and stores certain data on your server to ensure proper fun
 
 ## Changelog
 
+### 1.0.9
+* Updated: Tested up to
+* Updated: Translation handling
+* Enhancement: Security
+
 ### 1.0.8
-- **Bugfix**: Child theme not showing as an example
-- **Bugfix**: TypeError
+* Bugfix: Child theme not showing as an example
+* Bugfix: TypeError
 
 ### 1.0.7
-- **Added**: Note about child theme
-- **Updated**: Translations
+* Added: Note about child theme
+* Updated: Translations
 
 ### 1.0.6
-- **Added**: Translation capabilities
+* Added: Translation capabilities
 
 ### 1.0.5
-- **Bugfix**: Cache causing error when maintenance mode is disabled
+* Bugfix: Cache causing error when maintenance mode is disabled
 
 ### 1.0.4
-- **Added**: Setting for additional roles to bypass Maintenance Mode
-- **Added**: Bootstrap Icons
-- **Updated**: Default options
-- **Updated**: Top bar to also be green on frontend when in Maintenance Mode
-- **Removed**: Font Awesome
-- **Bugfix**: Setting menu styling
-- **Optimization**: Refactored codebase
+* Added: Setting for additional roles to bypass Maintenance Mode
+* Added: Bootstrap Icons
+* Updated: Default options
+* Updated: Top bar to also be green on frontend when in Maintenance Mode
+* Removed: Font Awesome
+* Bugfix: Setting menu styling
+* Optimization: Refactored codebase
 
 ### 1.0.3
-- **Bugfix**: Contact icons not linking correctly
-- **Bugfix**: Contact icons not spaced properly
+* Bugfix: Contact icons not linking correctly
+* Bugfix: Contact icons not spaced properly
 
 ### 1.0.2
-- **Added**: WYSIWYG editor for content section
-- **Added**: Contact section to admin to allow adding email and phone icons to maintenance page
-- **Added**: Socials section to admin to allow adding social icons to maintenance page
-- **Bugfix**: Icons not loading in admin
+* Added: WYSIWYG editor for content section
+* Added: Contact section to admin to allow adding email and phone icons to maintenance page
+* Added: Socials section to admin to allow adding social icons to maintenance page
+* Bugfix: Icons not loading in admin
 
 ### 1.0.1
-- **Bugfix**: Admins not able to bypass maintenance order restrictions when performing test orders
+* Bugfix: Admins not able to bypass maintenance order restrictions when performing test orders
 
 ### 1.0.0
-- Initial Release
+* Initial Release
