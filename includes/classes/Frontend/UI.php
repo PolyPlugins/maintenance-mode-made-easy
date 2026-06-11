@@ -45,6 +45,11 @@ class UI {
    */
   public function init() {
     add_action('init', array($this, 'maintenance_mode_check'));
+
+    if (!Utils::is_maintenance_enabled()) {
+      return;
+    }
+
     add_action('wp', array($this, 'maybe_show_maintenance_mode'), 0, 1);
 
     // Disable feeds

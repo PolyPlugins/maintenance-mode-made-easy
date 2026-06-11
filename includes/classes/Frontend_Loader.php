@@ -45,8 +45,11 @@ class Frontend_Loader {
    * @return void
    */
   public function init() {
-    $this->load_enqueue();
     $this->load_ui();
+
+    if (Utils::is_maintenance_enabled()) {
+      $this->load_enqueue();
+    }
   }
   
   /**
